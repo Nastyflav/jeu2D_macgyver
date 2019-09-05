@@ -1,13 +1,10 @@
 #Game constants
 
 #Window settings
-sprite_number = 15
-sprite_size = 1
-= sprite_number * sprite_size
-
-#Window personal settings 
+width_sprite_number = 15
+height_sprite_number = 15
+window_size = width_sprite_number * height_sprite_number
 window_title = "The Great Escape of MacGyver"
-icone_image =
 
 #Images lists
 back_image =

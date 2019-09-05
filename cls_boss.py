@@ -1,24 +1,10 @@
-#MacGyver
-    #controlled by arrows
-    #can move up, down, left and right
-    #only can move through available squares
-    #move one square at the time
-    #collect an item simply by walking on
+#from constants file
 
-#Boss
-    #no move
-    #constant position in every game
-    #endings
-        #if MC has all his equipement = LOSE
-        #if MC hasn't all his equipment = KILL
+#Boss class
+
+    #character initialization (def __init__)
+        #sprites character ?
+        #position character
+        
     
-#Equipments
-    #randomly dispatched everytime the program is running 
-    #item collected where MC walks on it
-    #three items
-        #needle
-        #plastic tube
-        #ether
-
-#
 

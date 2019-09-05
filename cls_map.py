@@ -1,8 +1,11 @@
-#from constants file
+#import pygame
+#from pygame.locals import * 
+#from constants import *
 
-#Level class
+class Level:
 
-    #level creation (def __init__)
+    #level creation
+    def __init_ (self, file)
 
     #level generation
         #file opening

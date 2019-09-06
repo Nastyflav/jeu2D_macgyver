@@ -4,7 +4,7 @@
     
 class Equipment:
 
-    def __init__(self, position):
+    def __init__(self):
 
         #sprites item ?
         #item position
@@ -22,20 +22,20 @@ class Equipment:
 class Needle(Equipment):
 
     #needle initialization
-    def _init__(self, image, position):
+    def _init__(self):
         super().__init__()
         self.image = pygame.image.load("aiguille.png").convert_alpha()
 
 class Plastic_tube(Equipment):
 
     #plastic tube initialization
-    def __init__ (self, image, position):
+    def __init__ (self):
         super().__init__()
         self.image = pygame.image.load("tube_plastique.png").convert_alpha()
 
 class Ether(Equipment):
 
     #ether initialization
-    def __init__ (self, image, position):
+    def __init__ (self):
         super().__init__()
         pygame.image.load("ether.png").convert_alpha()

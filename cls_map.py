@@ -1,20 +1,42 @@
+from constants import
 #import pygame
 #from pygame.locals import * 
 #from constants import *
 
-class Level:
+class Map:
 
-    #level creation
-    def __init_ (self, file)
+    #Map creation
+    def __init__(self, filename):
+        self.filename = filename
+        #Start
+        self.start = set()
+        #Exit
+        self.exit = set() 
+        #Paths
+        self.paths = set()
 
-    #level generation
-        #file opening
-            #reading file lines
-                #reading sprites / letters
-            #line appended to level list
-        #saving level
+        self.load_from_file()
 
-    #level printing
-        #loading images
-        # reading level list
+    def available_path(self, position):
+        return position in self.paths
+
+    #Loading map
+    def load_from_file(self):
+
+        with open(self.filename) as infile:
+            for x, line in enumerate(infile):
+                for y, c in enumerate(line):
+                    if c == constants.PATHS_CHAR:
+                        self.paths.add(Position, (x, y))
+                    elif c == constants.START_CHAR:
+                        self.start.add(Position(x, y))
+                        self.paths.add(Position(x, y))
+                    elif c == constants.EXIT_CHAR:
+                        self.exit.add(Position(x, y))
+                        self.paths.add(Position(x, y))
+
+
+
+
+
 

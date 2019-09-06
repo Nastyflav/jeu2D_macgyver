@@ -25,7 +25,7 @@ class Needle(Equipment):
     def _init__(self):
         super().__init__()
         #needle image
-        self.image = pygame.image.load("aiguille.png").convert_alpha()
+        #self.image = pygame.image.load("aiguille.png").convert_alpha()
 
 class Plastic_tube(Equipment):
 
@@ -33,7 +33,7 @@ class Plastic_tube(Equipment):
     def __init__ (self):
         super().__init__()
         #plastic tube image
-        self.image = pygame.image.load("tube_plastique.png").convert_alpha()
+        #self.image = pygame.image.load("tube_plastique.png").convert_alpha()
 
 class Ether(Equipment):
 
@@ -41,4 +41,4 @@ class Ether(Equipment):
     def __init__ (self):
         super().__init__()
         #ether image
-        pygame.image.load("ether.png").convert_alpha()
+        #pygame.image.load("ether.png").convert_alpha()

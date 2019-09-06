@@ -7,10 +7,9 @@ class Boss:
     #character initialization
     def __init__(self):
         #character image
-        self.image = pygame.image.load("Gardien.png")convert_alpha()
+        #self.image = pygame.image.load("Gardien.png")convert_alpha()
         #character position
-        self.position_x = 15
-        self.position_y = 12
+
         
     
 

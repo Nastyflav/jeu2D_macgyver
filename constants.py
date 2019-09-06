@@ -1,9 +1,13 @@
 #Game constants
 
+START_CHAR = S
+EXIT_CHAR = E
+PATHS_CHAR = 0
+
 #Window settings
-width_sprite_number = 15
-height_sprite_number = 15
-window_size = width_sprite_number * height_sprite_number
+square_number = 15
+sprite_size = 30
+window_size = square_number * sprite_size
 window_title = "The Great Escape of MacGyver"
 
 #Images lists

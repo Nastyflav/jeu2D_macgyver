@@ -37,7 +37,7 @@ class MacGyver:
                     #position
 
         #if down direction
-        if direction == "up":
+        if direction == "down":
             #if MC stays on screen
                 #if destination square isn't a wall
                     #one square move

@@ -1,6 +1,6 @@
 import os
 
-from position import Position
+import position
 
 '''a Map class '''
 class Map:
@@ -51,7 +51,7 @@ class Map:
                     elif col == constants.EXIT_CHAR:
                         self._exit.add(Position(x, y))
                         self._paths.add(Position(x, y))
-            #
+            #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
 
@@ -72,7 +72,7 @@ class Map:
         self.boss.Map = self
 
 def main():
-    map = Map('Maps/level.txt')
+    map = Map('level.txt')
 
 if __name__ =="__main__":
     main()

@@ -2,12 +2,12 @@ import os
 
 #Game constants
 
-START_CHAR = S
-EXIT_CHAR = E
-PATHS_CHAR = 0
-
+START_SQUARE = "S"
+EXIT_SQUARE = "E"
+PATHS_SQUARE = 0
 WIDTH = 15
 HEIGHT = 15
+        
 
 #Window settings
 #square_number = 15

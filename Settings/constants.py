@@ -1,3 +1,5 @@
+import os
+
 #Game constants
 
 START_CHAR = S
@@ -8,12 +10,11 @@ WIDTH = 15
 HEIGHT = 15
 
 #Window settings
-square_number = 15
-sprite_size = 30
-window_size = square_number * sprite_size
-window_title = "The Great Escape of MacGyver"
+#square_number = 15
+#sprite_size = 30
+#window_size = square_number * sprite_size
+#window_title = "The Great Escape of MacGyver"
 
 #Images lists
-back_image =
-wall_image =
+
 

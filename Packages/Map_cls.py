@@ -43,15 +43,15 @@ class Map:
         with open(self.filename) as infile:
             #Use enumerate in a loop to list every square and its nature
             for x, line in enumerate(infile):
-                print(line)
                 for y, col in enumerate(line):
+                    position = Position(x, y)
                     #if there is a path square (0 as PATH_CHAR)
                     if col == PATHS_SQUARE:
                         self._paths.add(Position,(x, y))
                     #if this is the start square(S as START_CHAR)   
                     elif col == START_SQUARE:
                         self._start.add(Position(x, y))
-                        self._paths.add(Position(x, y))   
+                        self._paths.add(Position(x, y))
                     #if this is the exit square (E as EXIT_CHAR)       
                     elif col == EXIT_SQUARE:
                         self._exit.add(Position(x, y))

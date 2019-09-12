@@ -4,7 +4,7 @@ import os
 
 START_SQUARE = "S"
 EXIT_SQUARE = "E"
-PATHS_SQUARE = 0
+PATHS_SQUARE = "."
 WIDTH = 15
 HEIGHT = 15
         

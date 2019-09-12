@@ -4,7 +4,8 @@ from Settings.constants import *
 
 def main():
     map = Map('Maps/level.txt')
-    print()
+    position = Position
+    input("Choose your next move")
     
 if __name__ =="__main__":
     main()

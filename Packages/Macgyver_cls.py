@@ -4,7 +4,7 @@ class MacGyver:
     def __init__ (self, map):
         #base map
         self.map = map
-        #character position / using property from map.py, start as an attribut
+        #character position / using property from map.py, "start" as an attribut
         self.position = self.map.start
 
     #character moves

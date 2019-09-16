@@ -1,4 +1,11 @@
-'''A Position class to calculate movements'''
+import os
+
+from Packages.Map import Map
+from Packages.Macgyver import MacGyver
+from Packages.Boss import Boss
+from Settings.constants import *
+
+#a position class to calculate movements
 class Position:
 
     #Initialize position

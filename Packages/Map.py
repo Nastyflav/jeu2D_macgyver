@@ -32,12 +32,12 @@ class Map:
     #I want to relate the start position to its own value, not an action
     @property
     def start(self):
-        return list(self.start)[0]
+        return list(self._start)[0]
 
     #I want to relate the exit position to its own value, not an action
     @property
     def exit(self):
-        return list(self.exit)[0]
+        return list(self._exit)[0]
 
     #is a position an available path ?
     def available_paths(self, position):
@@ -49,7 +49,6 @@ class Map:
         with open(self.filename) as infile:
             #Use enumerate in a loop to list every square and its nature
             for x, line in enumerate(infile):
-                print(line)
                 for y, col in enumerate(line):
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
@@ -76,7 +75,7 @@ class Map:
         self.macgyver.Map = self
 
     def add_boss (self, boss):
-        #Position MacGyver in the labyrinth
+        #Position the boss in the labyrinth
         self.boss = boss
         #Boss start position
         self.boss.position = self.exit

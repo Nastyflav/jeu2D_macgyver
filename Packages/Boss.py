@@ -1,6 +1,5 @@
 import os
 
-from Packages.Map import Map
 from Packages.Position import Position
 from Settings.constants import *
 

@@ -2,14 +2,17 @@ import os
 
 from Packages.Map import Map
 from Packages.Position import Position
-#from Packages.Macgyver import MacGyver
-#from Packages.Boss import Boss
+from Packages.Boss import Boss
+from Packages.Macgyver import MacGyver
 from Settings.constants import *
 
 
 def main():
     map = Map('Maps/level.txt')
-    print(map._exit)
+    macgyver = MacGyver(map)
+    position = Position()
+    print(macgyver.position)
+    
     
     input("Choose your next move")
     

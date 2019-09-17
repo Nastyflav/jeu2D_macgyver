@@ -1,15 +1,15 @@
 import os
 
-from Packages.Map import Map
 from Packages.Position import Position
 from Settings.constants import *
 
-class Needle:
+class Items:
 
     #needle initialization
     def _init__(self, map):
         #base map
         self.map = map
+        self.position = self.map.items
 
 class Plastic_tube:
 

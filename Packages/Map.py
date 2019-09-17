@@ -4,6 +4,7 @@ from random import sample
 from Packages.Position import Position
 from Packages.Macgyver import MacGyver
 from Packages.Boss import Boss
+from Packages.Items import Items
 from Settings.constants import *
 
 class Map:
@@ -61,7 +62,7 @@ class Map:
                     elif col == EXIT_SQUARE:
                         self._exit.add(Position(x, y))
                         self._paths.add(Position(x, y))
-        
+                        
             #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
@@ -70,7 +71,7 @@ class Map:
         #Position MacGyver into the maze
         self.macgyver = macgyver
         #MacGyver start position
-        self.macgyver.position = self.start
+        self.macgyver.position = self._start
         #So that MG can communicate with the Map class ?
         self.macgyver.Map = self
 
@@ -78,13 +79,14 @@ class Map:
         #Position the boss in the labyrinth
         self.boss = boss
         #Boss start position
-        self.boss.position = self.exit
+        self.boss.position = self._exit
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    def add_items(self, items):
+    def add_items(self, position):
         #Position the items into the maze
-        self.items = sample(set(self._paths), 3)
-
-    def __contains__(self, position):
-        return position in self._paths
+        self.items = random.sample(set([self._paths]), 3)
+        self.items.position = self.items
+        self.items.Map = self
+        #Using random.sample in a for loop to select three positions randomly
+        

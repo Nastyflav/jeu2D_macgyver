@@ -24,12 +24,12 @@ class Position:
     #Calculate position to the top
     def up(self):
         x, y = self.position
-        return Position(x+1, y)
+        return Position(x-11, y)
 
     #Calculate position to the bottom
     def down(self):
         x, y = self.position
-        return Position(x-1, y)
+        return Position(x+1, y)
 
     #Calculate position to the right
     def right(self):

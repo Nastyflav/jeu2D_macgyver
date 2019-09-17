@@ -26,17 +26,17 @@ class Position:
         x, y = self.position
         return Position(x+1, y)
 
-    #Calculate position to the top
+    #Calculate position to the bottom
     def down(self):
         x, y = self.position
         return Position(x-1, y)
 
-    #Calculate position to the top
+    #Calculate position to the right
     def right(self):
         x, y = self.position
         return Position(x, y+1)
 
-    #Calculate position to the top
+    #Calculate position to the left
     def left(self):
         x, y = self.position
         return Position(x, y-1)

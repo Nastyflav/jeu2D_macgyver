@@ -9,12 +9,9 @@ from Settings.constants import *
 
 def main():
     map = Map('Maps/level.txt')
-    macgyver = MacGyver(map)
-    position = Position()
-    print(macgyver.position)
-    
-    
-    input("Choose your next move")
+    p = Position(12, 1)
+    print(map.available_paths(p))
+
     
 if __name__ =="__main__":
     main()

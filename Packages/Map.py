@@ -83,10 +83,10 @@ class Map:
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    def add_items(self, position):
-        #Position the items into the maze
-        self.items = random.sample(set([self._paths]), 3)
-        self.items.position = self.items
-        self.items.Map = self
-        #Using random.sample in a for loop to select three positions randomly
+    def add_items(self, n, p_t, e):
+        #Position the items into the maze, using random.sample to pick each one
+        n = random.sample(set([self._paths]), 1)
+        p_t = random.sample(set([self._paths]), 1)
+        e = random.sample(set([self._paths]), 1)
+      
         

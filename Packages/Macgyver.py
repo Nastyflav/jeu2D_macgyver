@@ -3,6 +3,7 @@ import os
 from Packages.Position import Position
 from Settings.constants import *
 
+
 class MacGyver: 
 
     #character initialization
@@ -10,7 +11,7 @@ class MacGyver:
         #base map
         self.map = map
         #character position / using property from map.py, "start" as an attribut
-        self.position = self.map._start
+        self.position = self.map.start
 
     #character moves
     def moves (self, direction):
@@ -18,6 +19,8 @@ class MacGyver:
         next_position = getattr(self.position, direction)()
         if next_position in self.map:
             self.position = next_position
+            #To end the game
+            #if self.map._exit(position):
 
             
         

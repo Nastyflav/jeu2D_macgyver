@@ -7,6 +7,7 @@ from Packages.Boss import Boss
 from Packages.Items import Items
 from Settings.constants import *
 
+
 class Map:
 
     #Map creation
@@ -32,12 +33,12 @@ class Map:
 
     #I want to relate the start position to its own value, not an action
     @property
-    def start(self):
+    def start_square(self):
         return list(self._start)[0]
 
     #I want to relate the exit position to its own value, not an action
     @property
-    def exit(self):
+    def exit_square(self):
         return list(self._exit)[0]
 
     #is a position an available path ?
@@ -84,7 +85,7 @@ class Map:
         self.boss.Map = self
 
     def add_items(self, n, p_t, e):
-        #Position the items into the maze, using random.sample to pick each one
+        #Position three items into the maze, using random.sample to pick each one
         n = random.sample(set([self._paths]), 1)
         p_t = random.sample(set([self._paths]), 1)
         e = random.sample(set([self._paths]), 1)

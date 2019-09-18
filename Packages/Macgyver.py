@@ -1,5 +1,6 @@
 import os
 
+from Packages.Map import Map
 from Packages.Position import Position
 from Settings.constants import *
 
@@ -11,7 +12,7 @@ class MacGyver:
         #base map
         self.map = map
         #character position / using property from map.py, "start" as an attribut
-        self.position = self.map.start
+        self.position = map.start_square
 
     #character moves
     def moves (self, direction):

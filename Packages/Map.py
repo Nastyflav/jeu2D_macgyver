@@ -2,8 +2,6 @@ import os
 from random import sample
 
 from Packages.Position import Position
-from Packages.Macgyver import MacGyver
-from Packages.Boss import Boss
 from Packages.Items import Items
 from Settings.constants import *
 
@@ -24,7 +22,9 @@ class Map:
         #Boss
         self.boss = None
         #Items
-        self.items = None
+        self.needle = None
+        self.plastic_tube = None
+        self.ether = None
         #Maze dimensions
         self.height = None
         self.width = None
@@ -48,9 +48,9 @@ class Map:
     #Loading map
     def load_from_file(self):
         #Load the file (filename) content into the paths attribut. Identify as well the start and exit positions
-        with open(self.filename) as infile:
+        with open(self.filename) as level:
             #Use enumerate in a loop to list every square and its nature
-            for x, line in enumerate(infile):
+            for x, line in enumerate(level):
                 for y, col in enumerate(line):
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
@@ -87,7 +87,9 @@ class Map:
     def add_items(self, n, p_t, e):
         #Position three items into the maze, using random.sample to pick each one
         n = random.sample(set([self._paths]), 1)
+        return position in self.needle
         p_t = random.sample(set([self._paths]), 1)
+        return position in self.plastic_tube
         e = random.sample(set([self._paths]), 1)
+        return position in self.ether
       
-        

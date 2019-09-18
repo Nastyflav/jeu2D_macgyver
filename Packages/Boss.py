@@ -1,7 +1,9 @@
 import os
 
+from Packages.Map import Map
 from Packages.Position import Position
 from Settings.constants import *
+
 
 class Boss:
 
@@ -10,7 +12,7 @@ class Boss:
         #base map
         self.map = map
         #character position / using property from map.py, exit as an attribut
-        self.position = self.map.exit
+        self.position = self.map.exit_square
 
         
     

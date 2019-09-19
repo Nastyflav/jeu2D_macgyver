@@ -11,7 +11,6 @@ from Settings.constants import *
 class Game:
 
     def __init__(self):
-        self.running = False
         self.map = Map('Maps/level.txt')
         self.map.load_from_file()
         #self.macgyver = MacGyver(map)
@@ -22,7 +21,7 @@ class Game:
 
     def start(self):
         self.running = True
-        print()
+        print(self.map())
         user_answer = input ("Choose your move")
         #As long as self.running:
             #for each MG move:

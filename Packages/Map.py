@@ -63,11 +63,11 @@ class Map:
                     elif col == EXIT_SQUARE:
                         self._exit.add(Position(x, y))
                         self._paths.add(Position(x, y))
-                        
+                       
             #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
-        
+                
     def add_macgyver (self, macgyver):
         #Position MacGyver into the maze
         self.macgyver = macgyver
@@ -93,3 +93,5 @@ class Map:
         e = random.sample(set([self._paths]), 1)
         return position in self.ether
       
+
+    

@@ -2,7 +2,7 @@ import os
 
 from Settings.constants import *
 
-#a position class to calculate movements
+#a position class to calculate positions and movements
 class Position:
 
     #Initialize position
@@ -24,7 +24,7 @@ class Position:
     #Calculate position to the top
     def up(self):
         x, y = self.position
-        return Position(x-11, y)
+        return Position(x-1, y)
 
     #Calculate position to the bottom
     def down(self):

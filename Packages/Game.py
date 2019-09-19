@@ -11,7 +11,7 @@ from Settings.constants import *
 class Game:
 
     def __init__(self):
-        
+        self.running = False
         self.map = Map('Maps/level.txt')
         self.map.load_from_file()
         #self.macgyver = MacGyver(map)
@@ -21,7 +21,39 @@ class Game:
         #self.items = Items()
 
     def start(self):
-        print(level)
+        self.running = True
+        print()
+        user_answer = input ("Choose your move")
+        #As long as self.running:
+            #for each MG move:
+                #print map
+                #if user_answer == "Up"
+                    #if  next_position is in self.map
+                        #self_position = next_position
+                        #print map with next_position
+                    #else
+                        #do nothing
+                ##if user_answer == "Down"
+                    #if  next_position is in self.map
+                        #self_position = next_position
+                        #print map with next_position
+                    #else
+                        #do nothing
+                #if user_answer == "Right"
+                    #if  next_position is in self.map
+                        #self_position = next_position
+                        #print map with next_position
+                    #else
+                        #do nothing
+                #if user_answer == "Left"
+                    #if  next_position is in self.map
+                        #self_position = next_position
+                        #print map with next_position
+                    #else
+                        #do nothing
+        #if MG position = exit position
+            #game exit
+            
             
     #def direction(self):
         

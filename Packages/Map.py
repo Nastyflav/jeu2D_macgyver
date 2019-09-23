@@ -65,8 +65,7 @@ class Map:
                     #if this is the exit square ('E' as EXIT_CHAR)       
                     elif col == EXIT_SQUARE:
                         self._exit.add(Position(x, y))
-                        self._paths.add(Position(x, y))
-                       
+                        self._paths.add(Position(x, y))                     
             #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
@@ -87,19 +86,20 @@ class Map:
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    def add_items(self, n, p_t, e):
+    def add_items(self, n, p_t, e, position):
         #Position three items into the maze, using random.sample to pick each one
-        n = random.sample(set([self._paths]), 1)
+        self.n = sample(set([self._paths]), 1)
         return position in self.needle
-        p_t = random.sample(set([self._paths]), 1)
+        self.p_t = random.sample(set([self._paths]), 1)
         return position in self.plastic_tube
-        e = random.sample(set([self._paths]), 1)
+        self.e = random.sample(self._paths, 1)
         return position in self.ether
+        print("3")
 
     def map_display(self):
         for line in self.map:
             for character in line:
-                print(character, end="")
+                print(character, end=" ")
             print()
       
 

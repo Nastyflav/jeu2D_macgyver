@@ -11,26 +11,24 @@ from Packages.Items import Items
 class Game:
 
     def __init__(self):
-        
+        self.running = False
         self.map = Map('Maps/level.txt')
         self.map.load_from_file()
+        self.map.map_display()
         # self.macgyver = MacGyver(map)
         # self.map.add_macgyver(macgyver)
-        #self.boss = Boss(map)
-        #self.map.add_boss(boss) 
+        # self.boss = Boss(boss)
+        # self.map.add_boss() 
         #self.items = Items()
 
     def start(self):
-         
-
-        # maptextdisplay = Map_Text_Display(map)
-        # maptextdisplay.level()
-        # user_answer = input ("Choose your move")
-        # while user_answer != "Q":
-        #     if user_answer == "up":
-        #         map.macgyver.moves("up")
-        #     maptextdisplay.level
-        #     input ("Choose your move")
+        self.running = True
+        while self.running:
+            map.map_display
+            map.add_items
+            user_answer = input("Press Q to quit")
+            if user_answer == "Q":
+                self.running = False
         
         
         #As long as self.running:

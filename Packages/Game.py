@@ -5,24 +5,34 @@ from Packages.Position import Position
 from Packages.Macgyver import MacGyver
 from Packages.Boss import Boss
 from Packages.Items import Items
-from Settings.constants import *
+#from Settings.constants import *
 
 
 class Game:
 
     def __init__(self):
+        
         self.map = Map('Maps/level.txt')
         self.map.load_from_file()
-        #self.macgyver = MacGyver(map)
-        #self.map.add_macgyver(macgyver)
+        # self.macgyver = MacGyver(map)
+        # self.map.add_macgyver(macgyver)
         #self.boss = Boss(map)
         #self.map.add_boss(boss) 
         #self.items = Items()
 
     def start(self):
-        self.running = True
-        print(self.map())
-        user_answer = input ("Choose your move")
+         
+
+        # maptextdisplay = Map_Text_Display(map)
+        # maptextdisplay.level()
+        # user_answer = input ("Choose your move")
+        # while user_answer != "Q":
+        #     if user_answer == "up":
+        #         map.macgyver.moves("up")
+        #     maptextdisplay.level
+        #     input ("Choose your move")
+        
+        
         #As long as self.running:
             #for each MG move:
                 #print map
@@ -55,6 +65,3 @@ class Game:
             
             
     #def direction(self):
-        
-            
-                

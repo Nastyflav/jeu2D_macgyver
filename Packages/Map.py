@@ -11,6 +11,8 @@ class Map:
     #Map creation
     def __init__(self, filename):
         self.filename = filename
+        #The whole map
+        self.map = []
         #Start
         self._start = set()
         #Exit
@@ -44,13 +46,14 @@ class Map:
     #is a position an available path ?
     def available_paths(self, position):
         return position in self._paths
-
+  
     #Loading map
     def load_from_file(self):
         #Load the file (filename) content into the paths attribut. Identify as well the start and exit positions
         with open(self.filename) as level:
             #Use enumerate in a loop to list every square and its nature
             for x, line in enumerate(level):
+                self.map.append(list(line.strip()))
                 for y, col in enumerate(line):
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
@@ -92,6 +95,12 @@ class Map:
         return position in self.plastic_tube
         e = random.sample(set([self._paths]), 1)
         return position in self.ether
+
+    def map_display(self):
+        for line in self.map:
+            for character in line:
+                print(character, end="")
+            print()
       
 
     

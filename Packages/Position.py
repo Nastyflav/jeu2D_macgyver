@@ -1,6 +1,5 @@
 import os
 
-from Settings.constants import *
 
 #a position class to calculate positions and movements
 class Position:

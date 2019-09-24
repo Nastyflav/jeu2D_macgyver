@@ -2,6 +2,7 @@ import os
 from random import sample
 
 from Packages.Position import Position
+from Packages.Macgyver import Macgyver
 from Packages.Items import Items
 from Settings.constants import *
 
@@ -11,8 +12,6 @@ class Map:
     #Map creation
     def __init__(self, filename):
         self.filename = filename
-        #The whole map
-        self.map = []
         #Start
         self._start = set()
         #Exit
@@ -24,28 +23,12 @@ class Map:
         #Boss
         self.boss = None
         #Items
-        self.needle = None
-        self.plastic_tube = None
-        self.ether = None
+        self.items = set()
         #Maze dimensions
         self.height = None
         self.width = None
         #File attribut
         self.load_from_file()
-
-    #I want to relate the start position to its own value, not an action
-    @property
-    def start_square(self):
-        return list(self._start)[0]
-
-    #I want to relate the exit position to its own value, not an action
-    @property
-    def exit_square(self):
-        return list(self._exit)[0]
-
-    #is a position an available path ?
-    def available_paths(self, position):
-        return position in self._paths
   
     #Loading map
     def load_from_file(self):
@@ -53,7 +36,6 @@ class Map:
         with open(self.filename) as level:
             #Use enumerate in a loop to list every square and its nature
             for x, line in enumerate(level):
-                self.map.append(list(line.strip()))
                 for y, col in enumerate(line):
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
@@ -69,7 +51,21 @@ class Map:
             #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
-                
+    
+    #I want to relate the start position to its own value, not an action
+    @property
+    def start_square(self):
+        return list(self._start)[0]
+
+    #I want to relate the exit position to its own value, not an action
+    @property
+    def exit_square(self):
+        return list(self._exit)[0]
+
+    #is a position an available path ?
+    def add_paths(self, position):
+        return position in self._paths 
+
     def add_macgyver (self, macgyver):
         #Position MacGyver into the maze
         self.macgyver = macgyver
@@ -86,21 +82,18 @@ class Map:
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    def add_items(self, n, p_t, e, position):
-        #Position three items into the maze, using random.sample to pick each one
-        self.n = sample(set([self._paths]), 1)
-        return position in self.needle
-        self.p_t = random.sample(set([self._paths]), 1)
-        return position in self.plastic_tube
-        self.e = random.sample(self._paths, 1)
-        return position in self.ether
-        print("3")
+    # def add_items(self, items):
+    #     self.items = items
+    #     #Position three items into the maze, using random.sample to pick each one
+    #     self.items.position = sample(self._paths, 3)
+    #     if self.items.position != self._start: 
+    #         self.items.add(Position)
+    #     self.items.Map = self
+    
 
-    def map_display(self):
-        for line in self.map:
-            for character in line:
-                print(character, end=" ")
-            print()
+
+
+
       
 
     

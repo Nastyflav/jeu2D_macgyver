@@ -1,17 +1,16 @@
 import os
 
-from Packages.Position import Position
-from Settings.constants import *
-
 
 class Items:
 
     n = "N"
-    p_t = "P"
+    p = "P"
     e = "E"
     
     #items initialization
-    def _init__(self, map):
+    def _init__(self, n, p, e, map):
         #base map
         self.map = map
-        self.position = self.map.items
+        self.n_position = self.needle
+        self.p_position = self.plastic_tube
+        self.e_position = self.ether

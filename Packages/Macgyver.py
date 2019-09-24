@@ -1,26 +1,21 @@
 import os
 
-from Packages.Position import Position
-from Packages.Map import Map
-from Settings.constants import *
 
-
-class MacGyver: 
+class Macgyver: 
 
     #character initialization
-    def __init__ (self, paths):
+    def __init__ (self, map):
         #base map
-        self.paths = map
+        self.map = map
         #character position / using property from map.py, "start" as an attribut
-        self.position = map.start_square
+        self.position = self.map.start_square
 
     #character moves
     def moves (self, direction):
-        #getattr access an object property using a string
+        #getattr access an object property using a string 
         next_position = getattr(self.position, direction)()
-        if next_position in self._paths:
+        if next_position in self.map:
             self.position = next_position
-        return map
             #To end the game
             #if self.map._exit(position):
 

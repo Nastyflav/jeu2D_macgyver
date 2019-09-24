@@ -1,10 +1,11 @@
 import os
 
-from Packages.Map import Map
+from Packages.Map import *
 from Packages.Position import Position
 from Packages.Macgyver import MacGyver
 from Packages.Boss import Boss
 from Packages.Items import Items
+from Packages.Map_Text_Display import Map_Text_Display
 #from Settings.constants import *
 
 
@@ -14,7 +15,7 @@ class Game:
         self.running = False
         self.map = Map('Maps/level.txt')
         self.map.load_from_file()
-        self.map.map_display()
+        
         # self.macgyver = MacGyver(map)
         # self.map.add_macgyver(macgyver)
         # self.boss = Boss(boss)
@@ -24,11 +25,12 @@ class Game:
     def start(self):
         self.running = True
         while self.running:
-            map.map_display
-            map.add_items
-            user_answer = input("Press Q to quit")
-            if user_answer == "Q":
-                self.running = False
+            
+            # map.map_display
+            # map.add_items
+            # user_answer = input("Press Q to quit")
+            # if user_answer == "Q":
+            #     self.running = False
         
         
         #As long as self.running:

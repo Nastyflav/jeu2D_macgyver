@@ -3,7 +3,7 @@ from random import sample
 
 from Packages.Position import Position
 from Packages.Macgyver import Macgyver
-from Packages.Items import Items
+from Packages.Items import *
 from Settings.constants import *
 
 
@@ -24,7 +24,10 @@ class Map:
         #Boss
         self.boss = None
         #Items
-        self.items = []
+        self.items = set()
+        self.needle = set()
+        self.plastic_tube = None
+        self.ether = None
         #Maze dimensions
         self.height = None
         self.width = None
@@ -44,6 +47,7 @@ class Map:
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
                         self._paths.add(Position(x, y))
+                        self.items.add(Position(x, y))
                     #if this is the start square('S' as START_CHAR)   
                     elif col == START_SQUARE:
                         self._start.add(Position(x, y))
@@ -56,17 +60,20 @@ class Map:
             #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
-        
-    
+
+#I want to relate the exit position to its own value, not an action
+    @property
+    def exit_square(self):
+        return list(self._exit)[0]
+
     #I want to relate the start position to its own value, not an action
     @property
     def start_square(self):
         return list(self._start)[0]
 
-    #I want to relate the exit position to its own value, not an action
     @property
-    def exit_square(self):
-        return list(self._exit)[0]
+    def needle_square(self):
+        return list(self.needle)[0]
 
     #is a position an available path ?
     def add_paths(self, position):
@@ -88,14 +95,13 @@ class Map:
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    # def add_items(self, items):
-    #     self.items = items
-    #     #Position three items into the maze, using random.sample to pick each one
-    #     for in range
-    #     self.items.position = sample(self._paths, 3)
-    #     if self.items.position != self._start: 
-    #         self.items.append(Position(x, y))
-    #     self.items.Map = self
+    def add_items(self, needle, plastic_tube, ether):
+        self.needle = needle
+        self.plastic_tube = plastic_tube
+        self.ether = ether
+        #Position three items into the maze, using random.sample to pick
+        self.needle.position = sample(self.items, 1)
+            return self.needle.position in 
     
 
 

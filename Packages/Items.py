@@ -1,16 +1,25 @@
 import os
 
 
-class Items:
-
-    n = "N"
-    p = "P"
-    e = "E"
-    
+class Needle:    
     #items initialization
-    def _init__(self, n, p, e, map):
+    def _init__(self, map):
         #base map
         self.map = map
-        self.n_position = self.needle
-        self.p_position = self.plastic_tube
-        self.e_position = self.ether
+        self.position = self.map.needle_square
+
+
+class Plastic_tube:    
+    #items initialization
+    def _init__(self, map):
+        #base map
+        self.map = map
+        self.position = self.map.plastic_tube_square
+
+
+class Ether:    
+    #items initialization
+    def _init__(self, map):
+        #base map
+        self.map = map
+        self.position = self.map.ether_square

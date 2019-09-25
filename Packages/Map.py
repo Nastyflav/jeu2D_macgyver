@@ -11,6 +11,7 @@ class Map:
 
     #Map creation
     def __init__(self, filename):
+        self.map_array = []
         self.filename = filename
         #Start
         self._start = set()
@@ -23,12 +24,13 @@ class Map:
         #Boss
         self.boss = None
         #Items
-        self.items = set()
+        self.items = []
         #Maze dimensions
         self.height = None
         self.width = None
         #File attribut
         self.load_from_file()
+
   
     #Loading map
     def load_from_file(self):
@@ -36,7 +38,9 @@ class Map:
         with open(self.filename) as level:
             #Use enumerate in a loop to list every square and its nature
             for x, line in enumerate(level):
+                line_display = []
                 for y, col in enumerate(line):
+                    line_display.append(col)
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
                         self._paths.add(Position(x, y))
@@ -47,10 +51,12 @@ class Map:
                     #if this is the exit square ('E' as EXIT_CHAR)       
                     elif col == EXIT_SQUARE:
                         self._exit.add(Position(x, y))
-                        self._paths.add(Position(x, y))                     
+                        self._paths.add(Position(x, y)) 
+                self.map_array.append(line_display)                    
             #Calculating square dimensions
             self.height = x + 1
             self.width = y + 1
+        
     
     #I want to relate the start position to its own value, not an action
     @property
@@ -85,9 +91,10 @@ class Map:
     # def add_items(self, items):
     #     self.items = items
     #     #Position three items into the maze, using random.sample to pick each one
+    #     for in range
     #     self.items.position = sample(self._paths, 3)
     #     if self.items.position != self._start: 
-    #         self.items.add(Position)
+    #         self.items.append(Position(x, y))
     #     self.items.Map = self
     
 

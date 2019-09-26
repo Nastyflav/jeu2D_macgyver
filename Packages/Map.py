@@ -12,6 +12,7 @@ class Map:
     #Map creation
     def __init__(self, filename):
         self.filename = filename
+        
         #Lists of the entire map and of the available squares to place items
         self.map_array = []
         self.items = []
@@ -23,16 +24,15 @@ class Map:
         #Methods to lauch to determinate positions
         self.load_from_file()
         self.random_items()
-
+        #Pick a position for each item
         self.needle_square = self.items[0]
         self.tube_square = self.items[1]
         self.ether_square = self.items[2]
+
         self.macgyver = None
         self.boss = None
         self.height = None
         self.width = None
-        
-
   
     #Loading map
     def load_from_file(self):

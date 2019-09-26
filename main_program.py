@@ -6,21 +6,16 @@ from Packages.Map import Map
 from Packages.Macgyver import Macgyver
 from Packages.Boss import Boss
 from Packages.Position import Position
-from Packages.Items import *
+# from Packages.Items import *
 
 def main():
     map = Map("Maps/level.txt")
-    n = Needle(map)
-    t = Tube(map)
-    e = Ether(map)
-    # display = Map_Text_Display()
-    # display.display_map(map)
-    # mg.moves("right")
-    # display.display_map(map)
-    print(map.items)
-    print(n.position)
-    print(t.position)
-    print(e.position)
+    mg = Macgyver(map)
+    display = Map_Text_Display()
+    display.display_map(map)
+    mg.moves("right")
+    display.display_map(map)
+   
     
 
 if __name__ =="__main__":

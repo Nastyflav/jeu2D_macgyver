@@ -1,25 +1,28 @@
 import os
 
+from Packages.Position import Position
+
 
 class Needle:    
-    #items initialization
-    def _init__(self, map):
+    #character initialization
+    def __init__ (self, map):
         #base map
         self.map = map
+        #Its position is stored in Map
         self.position = self.map.needle_square
 
-
-class Plastic_tube:    
-    #items initialization
-    def _init__(self, map):
+class Tube:    
+    #character initialization
+    def __init__ (self, map):
         #base map
         self.map = map
-        self.position = self.map
-
+        #Its position is stored in Map
+        self.position = self.map.tube_square
 
 class Ether:    
-    #items initialization
-    def _init__(self, map):
+    #character initialization
+    def __init__ (self, map):
         #base map
         self.map = map
+        #Its position is stored in Map
         self.position = self.map.ether_square

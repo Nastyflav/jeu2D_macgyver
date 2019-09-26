@@ -2,6 +2,7 @@ import os
 
 from Packages.Position import Position
 
+
 class Macgyver: 
 
     #character initialization

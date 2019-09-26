@@ -3,7 +3,7 @@ from random import sample
 
 from Packages.Position import Position
 from Packages.Macgyver import Macgyver
-from Packages.Items import *
+from Packages.Items import Needle
 from Settings.constants import *
 
 
@@ -11,27 +11,27 @@ class Map:
 
     #Map creation
     def __init__(self, filename):
+        self.filename = filename
+        #Lists of the entire map and of the available squares to place items
         self.map_array = []
         self.items = []
-        self.filename = filename
-        #Start
+        # Some sets to store the different kind of positions
         self._start = set()
-        #Exit
         self._exit = set() 
-        #Paths
         self._paths = set()
-        #Macgyver
-        self.macgyver = None
-        #Boss
-        self.boss = None
-        #Items
         self.items_squares = set()
-        #Maze dimensions
+        #Methods to lauch to determinate positions
+        self.load_from_file()
+        self.random_items()
+
+        self.needle_square = self.items[0]
+        self.tube_square = self.items[1]
+        self.ether_square = self.items[2]
+        self.macgyver = None
+        self.boss = None
         self.height = None
         self.width = None
-        #File attribut
-        self.load_from_file()
-        self.add_items()
+        
 
   
     #Loading map
@@ -90,10 +90,20 @@ class Map:
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    def add_items(self):
+    def random_items(self):
         #Position three items into the maze, using random.sample to pick
         self.items = sample(self.items_squares, 3)
-
+        
+    def add_items(self, needle, tube, ether):
+        self.needle = needle
+        self.needle.position = self.needle_square
+        self.needle.Map = self
+        self.tube = tube
+        self.tube.position = self.tube_square
+        self.tube.Map = self
+        self.ether = ether
+        self.ether.position = self.ether_square
+        self.ether.Map = self
 
 
 

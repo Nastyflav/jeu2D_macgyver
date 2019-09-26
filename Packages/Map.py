@@ -12,6 +12,7 @@ class Map:
     #Map creation
     def __init__(self, filename):
         self.map_array = []
+        self.items = []
         self.filename = filename
         #Start
         self._start = set()
@@ -24,15 +25,13 @@ class Map:
         #Boss
         self.boss = None
         #Items
-        self.items = set()
-        self.needle = set()
-        self.plastic_tube = None
-        self.ether = None
+        self.items_squares = set()
         #Maze dimensions
         self.height = None
         self.width = None
         #File attribut
         self.load_from_file()
+        self.add_items()
 
   
     #Loading map
@@ -47,7 +46,7 @@ class Map:
                     #if there is a path square ('.' as PATH_CHAR)
                     if col == PATHS_SQUARE:
                         self._paths.add(Position(x, y))
-                        self.items.add(Position(x, y))
+                        self.items_squares.add(Position(x, y))
                     #if this is the start square('S' as START_CHAR)   
                     elif col == START_SQUARE:
                         self._start.add(Position(x, y))
@@ -71,10 +70,6 @@ class Map:
     def start_square(self):
         return list(self._start)[0]
 
-    @property
-    def needle_square(self):
-        return list(self.needle)[0]
-
     #is a position an available path ?
     def add_paths(self, position):
         return position in self._paths 
@@ -95,14 +90,10 @@ class Map:
         #So that the boss can communicate with the Map class ?
         self.boss.Map = self
 
-    def add_items(self, needle, plastic_tube, ether):
-        self.needle = needle
-        self.plastic_tube = plastic_tube
-        self.ether = ether
+    def add_items(self):
         #Position three items into the maze, using random.sample to pick
-        self.needle.position = sample(self.items, 1)
-            return self.needle.position in 
-    
+        self.items = sample(self.items_squares, 3)
+
 
 
 

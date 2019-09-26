@@ -14,7 +14,7 @@ class Plastic_tube:
     def _init__(self, map):
         #base map
         self.map = map
-        self.position = self.map.plastic_tube_square
+        self.position = self.map
 
 
 class Ether:    

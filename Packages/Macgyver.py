@@ -1,5 +1,6 @@
 import os
 
+from Packages.Position import Position
 
 class Macgyver: 
 
@@ -18,8 +19,7 @@ class Macgyver:
             self.map.map_array[self.position[0]][self.position[1]] = '.'
             self.position = next_position
             self.map.map_array[self.position[0]][self.position[1]] = 'S'
-            return True
-        return False
+   
 
 
             #To end the game

@@ -15,9 +15,9 @@ class Game:
         self.running = False
         self.map = Map('Maps/level.txt')
         self.map.load_from_file()
-        
-        # self.macgyver = MacGyver(map)
-        # self.map.add_macgyver(macgyver)
+        self.display = Map_Text_Display()
+        self.macgyver = MacGyver(map)
+        self.map.add_macgyver(macgyver)
         # self.boss = Boss(boss)
         # self.map.add_boss() 
         #self.items = Items()
@@ -25,12 +25,23 @@ class Game:
     def start(self):
         self.running = True
         while self.running:
-            
-            # map.map_display
+            user_answer = input("Press Q to quit")
+            display.display_map(map)
             # map.add_items
-            # user_answer = input("Press Q to quit")
-            # if user_answer == "Q":
-            #     self.running = False
+            if user_answer == "up"
+                mg.moves("up")
+                display.display_map(map)
+            if user_answer == "down"
+                mg.moves("down")
+                display.display_map(map)
+            if user_answer == "right"
+                mg.moves("right")
+                display.display_map(map)
+            if user_answer == "left"
+                mg.moves("left")
+                display.display_map(map)
+            if user_answer == "Q":
+                self.running = False
         
         
         #As long as self.running:

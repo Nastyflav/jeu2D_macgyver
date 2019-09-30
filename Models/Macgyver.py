@@ -1,6 +1,6 @@
 import os
 
-from Packages.Position import Position
+from Models.Position import Position
 
 class Macgyver: 
 
@@ -16,9 +16,9 @@ class Macgyver:
         #getattr access an object property using a string 
         next_position = getattr(self.position, direction)()
         if next_position in self.map._paths:
-            self.map.map_array[self.position[0]][self.position[1]] = '.'
+            # self.map.map_array[self.position[0]][self.position[1]] = '.'
             self.position = next_position
-            self.map.map_array[self.position[0]][self.position[1]] = 'S'
+            # self.map.map_array[self.position[0]][self.position[1]] = 'S'
    
 
             #To end the game

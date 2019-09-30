@@ -17,4 +17,10 @@ HEIGHT = 15
 
 #Images lists
 
+IMAGE_BACKGROUND = os.path.join ('resources', )
+IMAGE_MACGYVER = os.path.join ('resources', 'MacGyver.png')
+IMAGE_BOSS = os.path.join ('resources', 'Gardien.png')
+IMAGE_NEEDLE = os.path.join ('resources', 'aiguille.png')
+IMAGE_TUBE = os.path.join ('resources', 'tube_plastique.png')
+IMAGE_ETHER = os.path.join ('resources', 'ether.png')
 

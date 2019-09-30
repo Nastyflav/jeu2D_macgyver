@@ -1,11 +1,11 @@
 import os
 
-from Packages.Map import *
-from Packages.Position import Position
-from Packages.Macgyver import MacGyver
-from Packages.Boss import Boss
-from Packages.Items import Items
-from Packages.Map_Text_Display import Map_Text_Display
+from Models.Map import *
+from Models.Position import Position
+from Models.Macgyver import MacGyver
+from Models.Boss import Boss
+from Models.Items import Items
+from Displays.Map_Text_Display import Map_Text_Display
 #from Settings.constants import *
 
 

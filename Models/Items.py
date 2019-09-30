@@ -1,6 +1,6 @@
 import os
 
-from Packages.Position import Position
+from Models.Position import Position
 
 
 class Needle:    

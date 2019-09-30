@@ -1,11 +1,11 @@
 import os
 
 # from Packages.Game import Game
-from Packages.Map_Text_Display import Map_Text_Display
-from Packages.Map import Map
-from Packages.Macgyver import Macgyver
-from Packages.Boss import Boss
-from Packages.Position import Position
+from Displays.Map_Text_Display import Map_Text_Display
+from Models.Map import Map
+from Models.Macgyver import Macgyver
+from Models.Boss import Boss
+from Models.Position import Position
 # from Packages.Items import *
 
 def main():

@@ -1,9 +1,9 @@
 import os
 from random import sample
 
-from Packages.Position import Position
-from Packages.Macgyver import Macgyver
-from Packages.Items import Needle
+from Models.Position import Position
+from Models.Macgyver import Macgyver
+from Models.Items import Needle
 from Settings.constants import *
 
 

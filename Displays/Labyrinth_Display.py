@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+# coding: utf-8
 import pygame as pg
 
 from Settings.constants import *
@@ -14,3 +16,4 @@ class Labyrinth_Display(pg.sprite.Sprite):
 
     def funcname(self, parameter_list):
     #For each labyrinth position, print an image that matched 
+

@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+# coding: utf-8
 import os
 
 from Models.Position import Position
@@ -18,6 +20,7 @@ class Macgyver:
         if next_position in self.map._paths:
             # self.map.map_array[self.position[0]][self.position[1]] = '.'
             self.position = next_position
+        
             # self.map.map_array[self.position[0]][self.position[1]] = 'S'
    
 

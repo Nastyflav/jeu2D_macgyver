@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+# coding: utf-8
 import os
 
 #Game constants
@@ -24,3 +26,4 @@ IMAGE_NEEDLE = os.path.join ('resources', 'aiguille.png')
 IMAGE_TUBE = os.path.join ('resources', 'tube_plastique.png')
 IMAGE_ETHER = os.path.join ('resources', 'ether.png')
 
+FPS = 30

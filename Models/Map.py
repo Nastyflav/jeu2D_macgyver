@@ -24,7 +24,7 @@ class Map:
         #Methods to lauch to determinate positions
         self.load_from_file()
         self.random_items()
-        #Pick a position for each item
+        #Pick a position in a list for each item
         self.needle_square = self.items[0]
         self.tube_square = self.items[1]
         self.ether_square = self.items[2]

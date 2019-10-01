@@ -24,35 +24,3 @@ class Game:
         self.tube = Tube(map)
         self.ether = Ether(map)
         self.map.add_items(self.needle, self.tube, self.ether)
-
-        self.keyboard = Keyboard()
-
-        self.running = False
-        self.clock = pg.time.Clock()
-
-    def start(self):
-        self.running = True
-        while self.running:
-            self.clock.tick(FPS)
-            
-            # user_answer = input("Press Q to quit")
-            # display.display_map(map)
-            # # map.add_items
-            # if user_answer == "up"
-            #     mg.moves("up")
-            #     display.display_map(map)
-            # if user_answer == "down"
-            #     mg.moves("down")
-            #     display.display_map(map)
-            # if user_answer == "right"
-            #     mg.moves("right")
-            #     display.display_map(map)
-            # if user_answer == "left"
-            #     mg.moves("left")
-            #     display.display_map(map)
-            # if user_answer == "Q":
-                self.running = False
-        
-         
-            
-    #def direction(self):

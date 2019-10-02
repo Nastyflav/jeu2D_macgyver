@@ -3,19 +3,20 @@
 import os
 
 # from Models.Game import Game
-from Displays.Map_Text_Display import Map_Text_Display
-from Models.Map import Map
-from Models.Macgyver import Macgyver
-from Models.Boss import Boss
-from Models.Position import Position
+from Models.map_display import Map_display
+from Models.map import Map
+from Models.macgyver import Macgyver
 # from Models.Items import *
 
 def main():
-    map = Map("Maps/level.txt")
-    mg = Macgyver(map)
-    display = Map_Text_Display()
+    map = Map()
+    map.load_from_file("Maps/level.txt")
+    display = Map_display()
     display.display_map(map)
-    mg.moves("right")
+    mg = Macgyver()
+    map = mg.move_up(map)
+    display.display_map(map)
+    map = mg.move_down(map)
     display.display_map(map)
    
     

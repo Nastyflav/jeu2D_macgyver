@@ -4,8 +4,8 @@ import os
 
 #Game constants
 
-START_SQUARE = "S"
-EXIT_SQUARE = "E"
+START_SQUARE = "M"
+EXIT_SQUARE = "B"
 PATHS_SQUARE = "."
 WIDTH = 15
 HEIGHT = 15

@@ -9,15 +9,15 @@ from Models.macgyver import Macgyver
 # from Models.Items import *
 
 def main():
-    map = Map()
-    map.load_from_file("Maps/level.txt")
-    display = Map_display()
-    display.display_map(map)
-    mg = Macgyver()
-    map = mg.move_up(map)
-    display.display_map(map)
-    map = mg.move_down(map)
-    display.display_map(map)
+    map = Map("Maps/level.txt")
+    print(map.map_array)
+    # display = Map_display()
+    # display.display_map(map)
+    # mg = Macgyver()
+    # map = mg.move_up(map)
+    # display.display_map(map)
+    # map = mg.move_down(map)
+    # display.display_map(map)
    
     
 

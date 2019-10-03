@@ -7,8 +7,8 @@ import os
 START_SQUARE = "M"
 EXIT_SQUARE = "B"
 PATHS_SQUARE = "."
-WIDTH = 15
-HEIGHT = 15
+WIDTH = 640
+HEIGHT = 640
         
 
 #Window settings

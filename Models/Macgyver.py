@@ -1,39 +1,55 @@
 #! /usr/bin/env python3
 # coding: utf-8
 import os
+import pygame as pg
 
-from Models.Position import Position
+from Settings.constants import *
 
-class Macgyver: 
 
-    #character initialization
-    def __init__ (self, map):
-        #base map
-        self.map = map
-        #character position / using property from map.py, "start" as an attribut
-        self.position = self.map.start_square
+class Macgyver:
+    def __init__(self):
+        #Character start position
+        self.x = 0
+        self.y = 12
 
-    #character moves
-    def moves (self, direction):
-        #getattr access an object property using a string 
-        next_position = getattr(self.position, direction)()
-        if next_position in self.map._paths:
-            # self.map.map_array[self.position[0]][self.position[1]] = '.'
-            self.position = next_position
-        
-            # self.map.map_array[self.position[0]][self.position[1]] = 'S'
-   
+    # Four different movements for the character
+    def move_up(self, map):
+        if map.map_array[self.y - 1][self.x] != 'W':
+            map.map_array[self.y][self.x] = '.'
+            self.y -= 1
+            map.map_array[self.y][self.x] = 'M'
+        return map
 
-            #To end the game
-            #if self.map._exit(position):
+    def move_down(self, map):
+        if map.map_array[self.y + 1][self.x] != 'W':
+            map.map_array[self.y][self.x] = '.'
+            self.y += 1
+            map.map_array[self.y][self.x] = 'M'
+        return map
 
-            
-        
-    #character counter
-        #if MG position = item position
-                #pick up item
-                #implemente counter
-                #MG moves
-            #else
-                #MG moves
+    def move_right(self, map):
+        if map.map_array[self.y][self.x + 1] != 'W':
+            map.map_array[self.y][self.x] = '.'
+            self.x += 1
+            map.map_array[self.y][self.x] = 'M'
+        return map
 
+    def move_left(self, map):
+        if map.map_array[self.y][self.x - 1] != 'W':
+            map.map_array[self.y][self.x] = '.'
+            self.x -= 1
+            map.map_array[self.y][self.x] = 'M'
+        return map
+
+    def pick_up_object(self):
+        pass
+
+
+class Macgyver_display(pg.sprite.Sprite):
+
+    def __init__(self):
+        super().__init__()
+        self.image = pg.image.load(IMAGE_MACGYVER).convert_alpha()
+        self.rect = self.image.get_rect()
+
+    

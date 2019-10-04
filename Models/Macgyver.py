@@ -7,10 +7,11 @@ from Settings.constants import *
 
 
 class Macgyver:
-    def __init__(self):
+    def __init__(self, map):
         #Character start position
         self.x = 0
         self.y = 12
+        self.map = map
 
     # Four different movements for the character
     def move_up(self, map):
@@ -45,11 +46,6 @@ class Macgyver:
         pass
 
 
-class Macgyver_display(pg.sprite.Sprite):
 
-    def __init__(self):
-        super().__init__()
-        self.image = pg.image.load(IMAGE_MACGYVER).convert_alpha()
-        self.rect = self.image.get_rect()
 
     

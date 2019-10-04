@@ -14,16 +14,12 @@ class Game:
     def __init__(self):
         #Pygame initialization
         pg.init()
-        #Pygame methods to create screen, to give it a title and and to adjust an image on it
+        #Pygame functions to create a screen, and to give it a title
         pg.display.set_caption(WINDOW_TITLE)
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
-        self.background = pg.image.load(IMAGE_BACKGROUND).convert()
-        self.screen.blit(self.background, (0, 0))
-
-        self.sprites = pg.sprite.RenderUpdates()
-        self.sprites.add(Macgyver())
-
+        #Pygame functions to load and position Macgyver
         self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
+        self.macgyver.position = macgyver.get_rect()
         self.screen.blit(self.macgyver)
         #Uptading display method once every image is set
         pg.display.update()
@@ -35,7 +31,7 @@ class Game:
         self.running = True
         while self.running:
 
-            self.sprites.clear(self.screen, self.background)
+            self.sprites.clear(self.screen)
 
             self.sprites.update()
 

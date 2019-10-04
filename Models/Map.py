@@ -14,48 +14,33 @@ class Map:
         #Lists of the entire map and of the available squares to place items
         self.map_array = []
         self.items = []
-        self.items_squares = []
         # Method to create items positions
         self.load_from_file()
-        self.empty_path()
+        self.extract_position_for(self.map_array)
         # self.random_items()
         #Pick a position in a list for each item
-        # self.needle_square = self.items[0]
-        # self.tube_square = self.items[1]
-        # self.ether_square = self.items[2]
+        self.needle_position = self.items[0]
+        self.tube_position = self.items[1]
+        self.ether_position = self.items[2]
 
         self.height = None
         self.width = None
   
     #Loading map
     def load_from_file(self):
-        #Load the file (filename) content into the paths attribut. Identify as well the start and exit positions
-        with open(self.filename) as level:
-            positions = []
-            #Use enumerate in a loop to list every square and its nature
-            for x, line in enumerate(level):
-                line_display = []
-                for y, col in enumerate(line):
-                    line_display.append(col)
-                    #if there is a path square ('.' as PATH_CHAR)
-                    if col == PATHS_SQUARE:
-                        self.map_array.append(line_display)
-                        positions.append((x, y)
-                return positions
-                self.map_array.append(line_display)                    
-            #Calculating square dimensions
-            self.height = x + 1
-            self.width = y + 1
+        try:
+            with open(self.filename, "r") as map_file:
+                for line in map_file:
+                    self.map_array.append(list(line.strip()))
+        except FileNotFoundError:
+            print("Couldn't open map file \"" + self.filename + "\"")
+            exit()
 
-            def empty_path(self, labyrinth_map):
-    positions = []
-    for y, line in enumerate(labyrinth_map):
-        for x, column in enumerate(line):
-            if column == " ":
-                positions.append((x,y))
-    return positions
-self._path = self.empty_path(self._labyrinth)
-    
-    # def random_items(self):
-    #     #Position three items into the maze, using random.sample to pick
-    #     self.items = sample(self.items_squares, 3)
+    #Method to extract every path position into the map, and using the random.sample function to select three items positions
+    def extract_position_for(self, map_array):
+        positions = []
+        for x, line in enumerate(self.map_array):
+            for y, column in enumerate(line):
+                if column == PATHS_SQUARE:
+                    positions.append((x,y))
+        self.items = sample(positions, 3)

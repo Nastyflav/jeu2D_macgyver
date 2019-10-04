@@ -10,7 +10,7 @@ from Models.macgyver import Macgyver
 
 def main():
     map = Map("Maps/level.txt")
-    print(map.map_array)
+    print(map.items)
     # display = Map_display()
     # display.display_map(map)
     # mg = Macgyver()

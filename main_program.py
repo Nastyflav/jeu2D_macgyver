@@ -3,7 +3,7 @@
 import os
 
 # from Models.Game import Game
-# from Models.map_display import Map_display
+from Models.map_display import Map_display
 from Models.map import Map
 from Models.macgyver import Macgyver
 # from Models.Items import *
@@ -11,8 +11,8 @@ from Models.macgyver import Macgyver
 def main():
     map = Map("Maps/level.txt")
     print(map.items)
-    # display = Map_display()
-    # display.display_map(map)
+    display = Map_display()
+    display.display_map(map)
     # mg = Macgyver()
     # map = mg.move_up(map)
     # display.display_map(map)

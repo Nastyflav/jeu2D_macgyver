@@ -2,6 +2,12 @@
 # coding: utf-8
 import os
 
+#Square size window parameters
+SPRITE_WIDTH = 15 #squares maze number
+SPRITE_HEIGHT = 15
+SPRITE_SIZE = 40
+WINDOW_SIZE = SPRITE_WIDTH * SPRITE_SIZE
+
 #Characters of the map text file
 START_SQUARE = "M"
 EXIT_SQUARE = "B"
@@ -10,8 +16,7 @@ WALLS_SQUARE = "W"
       
 #Window settings
 WINDOW_TITLE = "The Great Escape of MacGyver"
-WIDTH = 640
-HEIGHT = 640
+ICON = os.path.join ('resources', 'MacGyver.png')
 
 #Images lists
 IMAGE_PATHS = os.path.join ('resources', 'floor-tiles-20x20' )

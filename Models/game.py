@@ -3,9 +3,9 @@
 import os
 import pygame as pg
 
-from map import Map
-from macgyver import Macgyver
-from map_display import Map_display
+from Models.map import Map
+from Models.macgyver import Macgyver
+from Models.map_display import Map_Display
 from Settings.constants import *
 
 
@@ -15,11 +15,19 @@ class Game:
         #Pygame initialization
         pg.init()
         #Pygame functions to create a screen, and to give it a title / icon
-        pg.display.set_caption(WINDOW_TITLE)
+        self.screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.title = pg.display.set_caption(WINDOW_TITLE)
         self.icon = pg.image.load(ICON).convert_alpha()
-        self.screen = pg.display.set_mode((WINDOW_SIZE))
-        #Calling the display method
-        Map_display.display_map()
+        pg.display.set_icon(self.icon)
+        self.background = pg.image.load(IMAGE_BOSS).convert()
+        self.screen.blit(self.background, (0, 0))
+        #Method to update the screen
+        pg.display.update()
+        #Loading map, characters and items
+        self.map = Map("Maps/level.txt")
+        self.map.load_from_file()
+        # self.map_display = Map_Display()
+        
         #Uptading display method once every image is set
         pg.display.update()
 
@@ -30,12 +38,16 @@ class Game:
         self.running = True
         while self.running:
 
+
+            #Step 1 : use the map_display method for printing the background
+
+            #Step 2 : use an update method on every sprites
+
+            #Step 3 : draw what's need to be drawn
             self.keyboard_events()
             
             self.clock.tick(FPS)
                 
-
-
     def keyboard_events(self):
         for event in pg.event.get(pg.KEYDOWN):
             if event.key == pg.K_UP:

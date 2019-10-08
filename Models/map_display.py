@@ -7,21 +7,20 @@ from Models.map import Map
 from Settings.constants import *
 
 
-class Map_display:
+class Map_Display:
 
-    #Display method to print the map into the terminal
-    def __init__(self):
-        #Images loading
-	    self.wall = pg.image.load(IMAGE_WALLS).convert()
+	def __init__(self):
+        #Images loading 
+		self.wall = pg.image.load(IMAGE_BOSS).convert()
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
-	    self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
-		self.path = pg.image.load(IMAGE_PATHS).convert()
-        self.needle = pg.image.load(IMAGE_NEEDLE).convert_alpha()
-        self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
-        self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
-	
-	def display_map(self, screen, map):
-		
+	    #self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
+		# self.path = pg.image.load(IMAGE_PATHS).convert()
+        # self.needle = pg.image.load(IMAGE_NEEDLE).convert_alpha()
+        # self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
+        # self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
+		self.display_map(map)
+
+	def display_map(self, map, screen):
 		num_line = 0
 		for line in map.map_array:
 			num_sprite = 0

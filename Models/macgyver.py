@@ -8,10 +8,11 @@ from Settings.constants import *
 
 class Macgyver:
     def __init__(self, map):
-        #Character start position
+        #Character start position and image
         self.x = 0
         self.y = 12
         self.map = map
+        self.image = pg.image.load(IMAGE_MACGYVER).convert_alpha()
 
     # Four different movements for the character
     def move_up(self, map):

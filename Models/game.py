@@ -14,13 +14,12 @@ class Game:
     def __init__(self):
         #Pygame initialization
         pg.init()
-        #Pygame functions to create a screen, and to give it a title
+        #Pygame functions to create a screen, and to give it a title / icon
         pg.display.set_caption(WINDOW_TITLE)
-        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
-        #Pygame functions to load and position Macgyver
-        self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
-        self.macgyver.position = macgyver.get_rect()
-        self.screen.blit(self.macgyver)
+        self.icon = pg.image.load(ICON).convert_alpha()
+        self.screen = pg.display.set_mode((WINDOW_SIZE))
+        #Calling the display method
+        Map_display.display_map()
         #Uptading display method once every image is set
         pg.display.update()
 
@@ -31,16 +30,9 @@ class Game:
         self.running = True
         while self.running:
 
-            self.sprites.clear(self.screen)
-
-            self.sprites.update()
-
-
-
             self.keyboard_events()
             
             self.clock.tick(FPS)
-            for event in pg.event.get():
                 
 
 

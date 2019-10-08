@@ -16,8 +16,7 @@ class Map:
         self.items = []
         # Method to create items positions
         self.load_from_file()
-        self.extract_position_for(self.map_array)
-        # self.random_items()
+        self.random_items(self.map_array)
         #Pick a position in a list for each item
         self.needle_position = self.items[0]
         self.tube_position = self.items[1]
@@ -37,7 +36,7 @@ class Map:
             exit()
 
     #Method to extract every path position into the map, and using the random.sample function to select three items positions
-    def extract_position_for(self, map_array):
+    def random_items(self, map_array):
         positions = []
         for x, line in enumerate(self.map_array):
             for y, column in enumerate(line):

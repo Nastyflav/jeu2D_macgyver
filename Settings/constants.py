@@ -21,7 +21,7 @@ WINDOW_TITLE = "The Great Escape of MacGyver"
 ICON = os.path.join ('resources', 'MacGyver.png')
 
 #Images lists
-IMAGE_PATHS = 'resources/floor-tiles-20x20'
+IMAGE_PATHS = os.path.join ('resources', 'floor-tiles-20x20')
 IMAGE_WALLS = os.path.join ('resources', 'floor-tiles-20x20')
 IMAGE_MACGYVER = os.path.join ('resources', 'MacGyver.png')
 IMAGE_BOSS = os.path.join ('resources', 'Gardien.png')

@@ -11,15 +11,14 @@ class Map_Display:
 
 	def __init__(self):
         #Images loading 
-		self.wall = pg.image.load(IMAGE_BOSS).convert()
+		self.wall = pg.image.load(IMAGE_WALLS).convert()
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
-	    #self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
-		# self.path = pg.image.load(IMAGE_PATHS).convert()
-        # self.needle = pg.image.load(IMAGE_NEEDLE).convert_alpha()
-        # self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
-        # self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
-		self.display_map(map)
-
+		self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
+		self.path = pg.image.load(IMAGE_PATHS).convert()
+		self.needle = pg.image.load(IMAGE_NEEDLE).convert_alpha()
+		self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
+		self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
+	
 	def display_map(self, map, screen):
 		num_line = 0
 		for line in map.map_array:
@@ -38,9 +37,10 @@ class Map_Display:
 					screen.blit(self.path, (x, y))
 				num_sprite += 1
 			num_line += 1
+		pg.display.update()
 
 	# def display_map(self, map):
-    #     for line in map.map_array:
-    #         for character in line:
-    #             print(character, end=" ")
-    #         print()
+	# 	for line in map.map_array:
+	# 		for character in line:
+	# 			print(character, end=" ")
+	# 		print()

@@ -12,7 +12,7 @@ class Macgyver:
         self.x = 0
         self.y = 12
         self.map = map
-        self.image = pg.image.load(IMAGE_MACGYVER).convert_alpha()
+        # self.image = pg.image.load(IMAGE_MACGYVER).convert_alpha()
 
     # Four different movements for the character
     def move_up(self, map):

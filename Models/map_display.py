@@ -9,24 +9,27 @@ from Settings.constants import *
 
 class Map_Display:
 
-	def __init__(self):
-        #Images loading 
-		self.wall = pg.image.load(IMAGE_WALLS).convert()
+	def __init__(self, map):
+		self.map = map
+        #Images loading
+		self.spritesheet = Spritesheet(SPRITESHEET) 
+		self.wall = self.spritesheet.get_image(15, 3, SPRITE_SIZE, SPRITE_SIZE)
+		self.path = self.spritesheet.get_image(4, 12, SPRITE_SIZE, SPRITE_SIZE)
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
 		self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
-		self.path = pg.image.load(IMAGE_PATHS).convert()
 		self.needle = pg.image.load(IMAGE_NEEDLE).convert_alpha()
 		self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
 		self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
 	
 	def display_map(self, map, screen):
-		num_line = 0
+		self.map = map
+		line_number = 0
 		for line in map.map_array:
-			num_sprite = 0
+			col_number = 0
 			for sprite in line:
-				#Calculate the position as pixels
-				x = num_sprite * SPRITE_SIZE
-				y = num_line * SPRITE_SIZE
+                #Calculate the position as pixels
+				x = col_number * SPRITE_SIZE
+				y = line_number * SPRITE_SIZE
 				if sprite == 'W':		  
 					screen.blit(self.wall, (x, y))
 				elif sprite == 'M':		   
@@ -35,8 +38,14 @@ class Map_Display:
 					screen.blit(self.boss, (x, y))
 				elif sprite == '.':
 					screen.blit(self.path, (x, y))
-				num_sprite += 1
-			num_line += 1
+				elif sprite == 'N':
+					screen.blit(self.needle, (x, y))
+				elif sprite == 'T':
+					screen.blit(self.tube, (x, y))
+				elif sprite == 'E':
+					screen.blit(self.ether, (x, y))
+				col_number += 1
+			line_number += 1
 		pg.display.update()
 
 	# def display_map(self, map):
@@ -44,3 +53,16 @@ class Map_Display:
 	# 		for character in line:
 	# 			print(character, end=" ")
 	# 		print()
+
+
+#Class used to grab images out of a spritesheet in the Resources data
+class Spritesheet:
+
+	def __init__(self, filename):
+        #Load the spritesheet
+		self.spritesheet = pg.image.load(filename).convert()
+
+	def get_image(self, x, y, width, height):
+		image = pg.Surface((width, height)).convert()
+		image.blit(self.spritesheet, (0, 0), (x, y, width, height))
+		return image

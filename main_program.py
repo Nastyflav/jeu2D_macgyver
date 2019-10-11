@@ -6,14 +6,11 @@ import os
 # from Models.map import Map
 # from Models.macgyver import Macgyver
 from Models.game import Game
-
+ 
 def main():
-
-
+    
     game = Game()
     game.start()
-   
-    
 
 if __name__ =="__main__":
     main()

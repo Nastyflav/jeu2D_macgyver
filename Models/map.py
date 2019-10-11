@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # coding: utf-8
 import os
-
+import pygame as pg
 from random import sample
 
 from Settings.constants import *
@@ -33,10 +33,11 @@ class Map:
                     self.map_array.append(list(line.strip()))
         except FileNotFoundError:
             print("Couldn't open map file \"" + self.filename + "\"")
-            exit()
-
+            exit() 
+ 
     #Method to extract every path position into the map, and using the random.sample function to select three items positions
     def random_items(self, map_array):
+        
         positions = []
         for x, line in enumerate(self.map_array):
             for y, column in enumerate(line):

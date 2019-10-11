@@ -14,7 +14,7 @@ class Macgyver:
         self.map = map
         self.items_collected = 0
 
-    # Four different movements for the character
+    #Four different movements for the character
     def move_up(self, map):
         if map.map_array[self.y - 1][self.x] != 'W':
             map.map_array[self.y][self.x] = '.'
@@ -23,26 +23,28 @@ class Macgyver:
         return map
 
     def move_down(self, map):
-        if map.map_array[self.y + 1][self.x] != 'W':
-            map.map_array[self.y][self.x] = '.'
-            self.y += 1
-            map.map_array[self.y][self.x] = 'M'
+        if self.y < (SPRITE_NUMBER - 1):
+            if map.map_array[self.y + 1][self.x] != 'W':
+                map.map_array[self.y][self.x] = '.'
+                self.y += 1
+                map.map_array[self.y][self.x] = 'M'
         return map
 
     def move_right(self, map):
-        if map.map_array[self.y][self.x + 1] != 'W':
-            map.map_array[self.y][self.x] = '.'
-            self.x += 1
-            map.map_array[self.y][self.x] = 'M'
+        if self.x < (SPRITE_NUMBER - 1):
+            if map.map_array[self.y][self.x + 1] != 'W':
+                map.map_array[self.y][self.x] = '.'
+                self.x += 1
+                map.map_array[self.y][self.x] = 'M'
         return map
 
     def move_left(self, map):
-        if map.map_array[self.y][self.x - 1] != 'W':
-            map.map_array[self.y][self.x] = '.'
-            self.x -= 1
-            map.map_array[self.y][self.x] = 'M'
+        if self.x < (SPRITE_NUMBER):
+            if map.map_array[self.y][self.x - 1] != 'W':
+                map.map_array[self.y][self.x] = '.'
+                self.x -= 1
+                map.map_array[self.y][self.x] = 'M'
         return map
-
 
 
     

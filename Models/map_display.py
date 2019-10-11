@@ -13,7 +13,7 @@ class Map_Display:
 		self.map = map
         #Images loading
 		self.spritesheet = Spritesheet(SPRITESHEET) 
-		self.wall = self.spritesheet.get_image(15, 3, SPRITE_SIZE, SPRITE_SIZE)
+		self.wall = self.spritesheet.get_image(46, 154, SPRITE_SIZE, SPRITE_SIZE)
 		self.path = self.spritesheet.get_image(4, 12, SPRITE_SIZE, SPRITE_SIZE)
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
 		self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
@@ -32,12 +32,14 @@ class Map_Display:
 				y = line_number * SPRITE_SIZE
 				if sprite == 'W':		  
 					screen.blit(self.wall, (x, y))
-				elif sprite == 'M':		   
-					screen.blit(self.macgyver, (x, y))
 				elif sprite == 'B':		  
+					screen.blit(self.wall, (x, y))
 					screen.blit(self.boss, (x, y))
 				elif sprite == '.':
 					screen.blit(self.path, (x, y))
+				elif sprite == 'M':		   
+					screen.blit(self.path, (x, y))
+					screen.blit(self.macgyver, (x, y))
 				elif sprite == 'N':
 					screen.blit(self.needle, (x, y))
 				elif sprite == 'T':

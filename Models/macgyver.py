@@ -20,6 +20,22 @@ class Macgyver:
             map.map_array[self.y][self.x] = '.'
             self.y -= 1
             map.map_array[self.y][self.x] = 'M'
+        #Some specific lines to allows MG to pick up the items
+        elif map.map_array[self.y - 1][self.x] == 'N':
+            map.map_array[self.y][self.x] = '.'
+            self.y -= 1
+            map.map_array[self.y][self.x] = 'M'
+            self.items_collected += 1
+        elif map.map_array[self.y - 1][self.x] == 'T':
+            map.map_array[self.y][self.x] = '.'
+            self.y -= 1
+            map.map_array[self.y][self.x] = 'M'
+            self.items_collected += 1
+        elif map.map_array[self.y - 1][self.x] == 'E':
+            map.map_array[self.y][self.x] = '.'
+            self.y -= 1
+            map.map_array[self.y][self.x] = 'M'
+            self.items_collected += 1
         return map
 
     def move_down(self, map):
@@ -28,6 +44,22 @@ class Macgyver:
                 map.map_array[self.y][self.x] = '.'
                 self.y += 1
                 map.map_array[self.y][self.x] = 'M'
+            #Some specific lines to allows MG to pick up the items
+            elif map.map_array[self.y + 1][self.x] == 'N':
+                map.map_array[self.y][self.x] = '.'
+                self.y += 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
+            elif map.map_array[self.y + 1][self.x] == 'T':
+                map.map_array[self.y][self.x] = '.'
+                self.y += 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
+            elif map.map_array[self.y + 1][self.x] == 'E':
+                map.map_array[self.y][self.x] = '.'
+                self.y += 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
         return map
 
     def move_right(self, map):
@@ -36,6 +68,22 @@ class Macgyver:
                 map.map_array[self.y][self.x] = '.'
                 self.x += 1
                 map.map_array[self.y][self.x] = 'M'
+            #Some specific lines to allows MG to pick up the items
+            elif map.map_array[self.y][self.x + 1] == 'N':
+                map.map_array[self.y][self.x] = '.'
+                self.x += 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
+            elif map.map_array[self.y][self.x + 1] == 'T':
+                map.map_array[self.y][self.x] = '.'
+                self.x += 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
+            elif map.map_array[self.y][self.x + 1] == 'E':
+                map.map_array[self.y][self.x] = '.'
+                self.x += 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
         return map
 
     def move_left(self, map):
@@ -44,7 +92,21 @@ class Macgyver:
                 map.map_array[self.y][self.x] = '.'
                 self.x -= 1
                 map.map_array[self.y][self.x] = 'M'
+            #Some specific lines to allows MG to pick up the items
+            elif map.map_array[self.y][self.x - 1] == 'N':
+                map.map_array[self.y][self.x] = '.'
+                self.x -= 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
+            elif map.map_array[self.y][self.x - 1] == 'T':
+                map.map_array[self.y][self.x] = '.'
+                self.x -= 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
+            elif map.map_array[self.y][self.x - 1] == 'E':
+                map.map_array[self.y][self.x] = '.'
+                self.x -= 1
+                map.map_array[self.y][self.x] = 'M'
+                self.items_collected += 1
         return map
-
-
     

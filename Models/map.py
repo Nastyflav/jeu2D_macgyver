@@ -43,6 +43,7 @@ class Map:
                 if column == PATHS_SQUARE:
                     positions.append((x,y))
         self.items = sample(positions, 3)
+        #We place every item into the maze, using a character for every one of them
         self.map_array[self.items[0][0]][self.items[0][1]] = 'N'
         self.map_array[self.items[1][0]][self.items[1][1]] = 'T'
         self.map_array[self.items[2][0]][self.items[2][1]] = 'P'

@@ -11,7 +11,7 @@ class Map_Display:
 
 	def __init__(self, map):
 		self.map = map
-        #Images loading
+        #Images loading from constants
 		self.wall = pg.image.load(IMAGE_WALL).convert_alpha()
 		self.path = pg.image.load(IMAGE_PATH).convert_alpha()
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
@@ -20,8 +20,10 @@ class Map_Display:
 		self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
 		self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
 	
+	#Method to display the maze using Pygame
 	def display_map(self, map, screen):
 		self.map = map
+		#We analyze every characters line and blit and image on every one of them
 		line_number = 0
 		for line in map.map_array:
 			col_number = 0
@@ -29,6 +31,7 @@ class Map_Display:
                 #Calculate the position as pixels
 				x = col_number * SPRITE_SIZE
 				y = line_number * SPRITE_SIZE
+				#Pygame function to put an image matching with a character
 				if sprite == 'W':		  
 					screen.blit(self.wall, (x, y))
 				elif sprite == 'B':		  
@@ -47,6 +50,7 @@ class Map_Display:
 					screen.blit(self.ether, (x, y))
 				col_number += 1
 			line_number += 1
+		#Pygame method to update the sprites display at every loop
 		pg.display.update()
 
 

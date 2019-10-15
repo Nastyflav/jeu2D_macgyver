@@ -37,10 +37,13 @@ class Map:
  
     #Method to extract every path position into the map, and using the random.sample function to select three items positions
     def random_items(self, map_array):
-        
         positions = []
         for x, line in enumerate(self.map_array):
             for y, column in enumerate(line):
                 if column == PATHS_SQUARE:
                     positions.append((x,y))
         self.items = sample(positions, 3)
+        self.map_array[self.items[0][0]][self.items[0][1]] = 'N'
+        self.map_array[self.items[1][0]][self.items[1][1]] = 'T'
+        self.map_array[self.items[2][0]][self.items[2][1]] = 'P'
+

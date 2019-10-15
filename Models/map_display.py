@@ -12,9 +12,8 @@ class Map_Display:
 	def __init__(self, map):
 		self.map = map
         #Images loading
-		self.spritesheet = Spritesheet(SPRITESHEET) 
-		self.wall = self.spritesheet.get_image(46, 154, SPRITE_SIZE, SPRITE_SIZE)
-		self.path = self.spritesheet.get_image(4, 12, SPRITE_SIZE, SPRITE_SIZE)
+		self.wall = pg.image.load(IMAGE_WALL).convert_alpha()
+		self.path = pg.image.load(IMAGE_PATH).convert_alpha()
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
 		self.boss = pg.image.load(IMAGE_BOSS).convert_alpha()
 		self.needle = pg.image.load(IMAGE_NEEDLE).convert_alpha()
@@ -33,7 +32,7 @@ class Map_Display:
 				if sprite == 'W':		  
 					screen.blit(self.wall, (x, y))
 				elif sprite == 'B':		  
-					screen.blit(self.wall, (x, y))
+					screen.blit(self.path, (x, y))
 					screen.blit(self.boss, (x, y))
 				elif sprite == '.':
 					screen.blit(self.path, (x, y))
@@ -50,21 +49,10 @@ class Map_Display:
 			line_number += 1
 		pg.display.update()
 
-	# def display_map(self, map):
+
+	#Method to display the maze into the terminal, before using graphics
+	# def display_terminal(self, map):
 	# 	for line in map.map_array:
 	# 		for character in line:
 	# 			print(character, end=" ")
 	# 		print()
-
-
-#Class used to grab images out of a spritesheet in the Resources data
-class Spritesheet:
-
-	def __init__(self, filename):
-        #Load the spritesheet
-		self.spritesheet = pg.image.load(filename).convert()
-
-	def get_image(self, x, y, width, height):
-		image = pg.Surface((width, height)).convert()
-		image.blit(self.spritesheet, (0, 0), (x, y, width, height))
-		return image

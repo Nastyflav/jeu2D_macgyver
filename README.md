@@ -8,17 +8,17 @@ How to install and launch :
 Clone with https : https://github.com/Nastyflav/macgyver.git \
 or clone with SSH : git@github.com:Nastyflav/macgyver.git \
 into a repo on your local machine \
-Documentation about pull --> https://help.github.com/en/articles/cloning-a-repository \
+Documentation about pull --> https://help.github.com/en/articles/cloning-a-repository 
 
 Set your virtual environment under python3.7.x \
 Pip install Pygame (in your virtual environment) \
-Write "python3 main_program.py" in your terminal \
+Write "python3 main_program.py" in your terminal 
 
 Requirements :
 --------------
 Python 3.7.x \
 download : https://www.python.org/downloads/ \
-install : https://realpython.com/installing-python/ \
+install : https://realpython.com/installing-python/ 
 
 Pygame\
 download : https://www.pygame.org/download.shtml \
@@ -33,13 +33,13 @@ main_program.py\
 Models/ contains all the differents classes and the game mechanics\
 Resources/ contains the graphics elements\
 Settings/ contains constants.py\
-Maps/ contains .txt files (level design)\
+Maps/ contains .txt files (level design)
 
 Built with :
 --------------
 Visual Studio Code (IDE)\
 Python 3.7.5\
-UTF-8\
+UTF-8
 
 Author :
 --------------

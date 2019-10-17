@@ -21,11 +21,11 @@ download : https://www.python.org/downloads/ \
 install : https://realpython.com/installing-python/ \
 
 Pygame\
-download : https://www.pygame.org/download.shtml\
-install : https://www.pygame.org/wiki/GettingStarted\
+download : https://www.pygame.org/download.shtml \
+install : https://www.pygame.org/wiki/GettingStarted 
 
 Depending of your python's install, you might need PIP\
-install pip : https://packaging.python.org/tutorials/installing-packages/\
+install pip : https://packaging.python.org/tutorials/installing-packages/
 
 Modules :
 --------------

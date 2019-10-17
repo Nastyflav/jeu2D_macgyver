@@ -1,4 +1,4 @@
-The Great Escape of MacGyver :
+#The Great Escape of MacGyver :
 
 Help MacGyver to escape from the labyrinth by collecting every item, each one place into the maze.
 Our hero will be able to make a syringe which will put asleep the maze guardian and will allow MacGyver to exit.

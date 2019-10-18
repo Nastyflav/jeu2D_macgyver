@@ -17,15 +17,11 @@ class Map:
         # Method to create items positions
         self.load_from_file()
         self.random_items(self.map_array)
-        #Pick a position in a list for each item
-        self.needle_position = self.items[0]
-        self.tube_position = self.items[1]
-        self.ether_position = self.items[2]
 
         self.height = None
         self.width = None
   
-    #Loading map
+    #Loading map to make an array with all the file characters
     def load_from_file(self):
         try:
             with open(self.filename, "r") as map_file:
@@ -35,7 +31,7 @@ class Map:
             print("Couldn't open map file \"" + self.filename + "\"")
             exit() 
  
-    #Method to extract every path position into the map, and using the random.sample function to select three items positions
+    #Method to extract every path position into the map_array, and using the random.sample function to select three items positions
     def random_items(self, map_array):
         positions = []
         for x, line in enumerate(self.map_array):
@@ -46,5 +42,5 @@ class Map:
         #We place every item into the maze, using a character for every one of them
         self.map_array[self.items[0][0]][self.items[0][1]] = 'N'
         self.map_array[self.items[1][0]][self.items[1][1]] = 'T'
-        self.map_array[self.items[2][0]][self.items[2][1]] = 'P'
+        self.map_array[self.items[2][0]][self.items[2][1]] = 'E'
 

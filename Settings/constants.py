@@ -2,6 +2,7 @@
 # coding: utf-8
 import os
 
+
 #Square size window parameters
 SPRITE_NUMBER = 15 #squares maze number
 SPRITE_SIZE = 40

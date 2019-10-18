@@ -43,10 +43,13 @@ class Map_Display:
 					screen.blit(self.path, (x, y))
 					screen.blit(self.macgyver, (x, y))
 				elif sprite == 'N':
+					screen.blit(self.path, (x, y))
 					screen.blit(self.needle, (x, y))
 				elif sprite == 'T':
+					screen.blit(self.path, (x, y))
 					screen.blit(self.tube, (x, y))
 				elif sprite == 'E':
+					screen.blit(self.path, (x, y))
 					screen.blit(self.ether, (x, y))
 				col_number += 1
 			line_number += 1

@@ -52,7 +52,7 @@ class Game:
                 self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
                 self.screen.blit(self.win, (140, 315))
                 pg.display.update()
-                pg.time.wait(10000)
+                pg.time.wait(7000)
                 self.running = False
                 #Player can restart over
                 for event in pg.event.get():
@@ -64,7 +64,7 @@ class Game:
                 self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
                 self.screen.blit(self.lost, (140, 315))
                 pg.display.update()
-                pg.time.wait(10000)
+                pg.time.wait(7000)
                 self.running = False
                 #Player can restart over
                 for event in pg.event.get():

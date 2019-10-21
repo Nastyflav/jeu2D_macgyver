@@ -29,3 +29,7 @@ IMAGE_ETHER = os.path.join ('resources', 'ether.png')
 
 #Game frames speed
 FPS = 30
+
+#Colors
+WHITE = 255, 255, 255
+BLACK = 0, 0, 0

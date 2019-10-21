@@ -41,7 +41,7 @@ class Macgyver:
                 map.map_array[self.y][self.x] = 'M'
         return map
 
-    def pick_up_items(self, map):
+    def collect_items(self, map):
         if self.map.map_array[self.y][self.x] == 'N'\
         or 'T'\
         or 'E':

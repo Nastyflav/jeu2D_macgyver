@@ -53,9 +53,6 @@ class MapDisplay:
 					screen.blit(self.ether, (x, y))
 				col_number += 1
 			line_number += 1
-		#Pygame method to update the sprites display at every loop
-		pg.display.update()
-
 
 	#Method to display the maze into the terminal, before using graphics
 	# def display_terminal(self, map):

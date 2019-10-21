@@ -6,7 +6,7 @@ import pygame as pg
 from Models.map import Map
 from Models.macgyver import Macgyver
 from Models.map_display import MapDisplay
-from Settings.constants import SIDE_DIM, WINDOW_TITLE, FPS, ICON
+from Settings.constants import SIDE_DIM, WINDOW_TITLE, FPS, ICON, WHITE, BLACK
 
 
 class Game:
@@ -22,12 +22,8 @@ class Game:
         pg.display.set_icon(self.icon)
         #Set the end messages : win or lost
         self.message = pg.font.SysFont(None, 30)
-        self.win = self.message.render('YOU WIN ! Press ENTER to restart', True, (255, 255, 255))
-        self.lost = self.message.render('YOU LOST ! Press ENTER to restart', True, (255, 255, 255))
-        #Set the items counter
-        self.counter_message = pg.font.SysFont(None, 10)
-        self.counter = self.counter_message.render('Items :', True, (255, 255, 255))
-        self.screen.blit(self.counter, (500, 500))
+        self.win = self.message.render('YOU WIN ! Press ENTER to restart', True, (WHITE))
+        self.lost = self.message.render('YOU LOST ! Press ENTER to restart', True, (WHITE))
         #Loading map, characters and items
         self.map = Map("Maps/level.txt")
         self.display = MapDisplay(map)
@@ -40,36 +36,43 @@ class Game:
     def start(self):
         self.running = True
         while self.running:
-            
+            #We call every class methods + the map display
             self.display.display_map(self.map, self.screen)
-            
             self.keyboard_events()
             self.items_counter()
             self.clock.tick(FPS)
+            self.endings()
 
-            #check if Macgyver is in front of the boss
-            if self.map.map_array[self.macgyver.y][self.macgyver.x + 1] == 'B':
-                #if he got all the items, player wins
-                if self.items_number == 3:
-                    self.win_center = self.win.get_rect().center
-                    self.screen.blit(self.win, self.win_center)
-                    #Player can restart over
-                    for event in pg.event.get():
-                        if event.type == pg.KEYDOWN:
-                            if event.key == pg.K_RETURN:
-                                self.running = True
-                #if he don't have all the items, player loses
-                else:
-                    self.lost_center = self.lost.get_rect().center
-                    self.screen.blit(self.win, self.win_center)
-                    #Player can restart over
-                    for event in pg.event.get():
-                        if event.type == pg.KEYDOWN:
-                            if event.key == pg.K_RETURN:
-                                self.running = True
-                    
-            
-    #Method for keyboard controllers during the game, implemented int the game.start() method  
+    #Method to check if all the items are collected, and printing win or loss messages
+    def endings(self):
+        #check if Macgyver is in front of the boss
+        if self.map.map_array[self.macgyver.y][self.macgyver.x + 1] == 'B':
+            #if he got all the items, player wins
+            if self.macgyver.items_collected == 3:
+                self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
+                self.screen.blit(self.win, (140, 315))
+                pg.display.update()
+                pg.time.wait(10000)
+                self.running = False
+                #Player can restart over
+                for event in pg.event.get():
+                    if event.type == pg.KEYDOWN:
+                        if event.key == pg.K_RETURN:
+                            self.running = True
+            #if he doesn't have all the items, player loses
+            else:
+                self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
+                self.screen.blit(self.lost, (140, 315))
+                pg.display.update()
+                pg.time.wait(10000)
+                self.running = False
+                #Player can restart over
+                for event in pg.event.get():
+                    if event.type == pg.KEYDOWN:
+                        if event.key == pg.K_RETURN:
+                            self.running = True
+                                  
+    #Method for keyboard controllers during the game, implemented into the game.start() method  
     def keyboard_events(self):
         for event in pg.event.get():
             #Quit the game if player closes the window
@@ -88,10 +91,12 @@ class Game:
                 elif event.type == pg.K_ESCAPE:
                     self.running = False
 
+    #Method to display the items counter
     def items_counter(self):
-        self.items_number = 0
-        if self.macgyver.items_collected == True:
-            self.items_number += 1
-            self.counter = self.counter_message.render('x ' + str(self.items_number), True,(255, 255, 255))
-
+        #Set the items counter
+        self.counter_message = pg.font.SysFont(None, 50)
+        self.counter = self.counter_message.render('Items : ' + str(self.macgyver.items_collected), True, (WHITE))#call the MG class on the items number
+        self.screen.blit(self.counter, (450, 570))
+        #Pygame method to update the map display
+        pg.display.update()
 

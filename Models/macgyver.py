@@ -3,8 +3,6 @@
 import os
 import pygame as pg
 
-from Settings.constants import *
-
 
 class Macgyver:
     def __init__(self, map):
@@ -12,6 +10,7 @@ class Macgyver:
         self.x = 0
         self.y = 12
         self.map = map
+        self.items_collected = 0
 
     #Four different movements for the character
     def move_up(self, map):
@@ -41,3 +40,9 @@ class Macgyver:
                 self.x -= 1
                 map.map_array[self.y][self.x] = 'M'
         return map
+
+    def pick_up_items(self, map):
+        if self.map.map_array[self.y][self.x] == 'N'\
+        or 'T'\
+        or 'E':
+            self.items_collected += 1

@@ -4,7 +4,7 @@ import os
 import pygame as pg
 from random import sample
 
-from Settings.constants import *
+from Settings.constants import PATHS_SQUARE
 
 class Map:
 

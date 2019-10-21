@@ -4,10 +4,10 @@ import os
 import pygame as pg
 
 from Models.map import Map
-from Settings.constants import *
+from Settings.constants import IMAGE_WALL, IMAGE_PATH, IMAGE_MACGYVER, IMAGE_BOSS, IMAGE_NEEDLE, IMAGE_TUBE, IMAGE_ETHER, SPRITE_SIZE
 
 
-class Map_Display:
+class MapDisplay:
 
 	def __init__(self, map):
 		self.map = map

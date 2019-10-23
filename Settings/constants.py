@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # coding: utf-8
+"""Module to link the game images to the constants file"""
 import os
 
 
@@ -13,19 +14,19 @@ START_SQUARE = "M"
 EXIT_SQUARE = "B"
 PATHS_SQUARE = "."
 WALLS_SQUARE = "W"
-      
+
 #Window settings
 WINDOW_TITLE = "The Great Escape of MacGyver"
-ICON = os.path.join ('resources', 'MacGyver.png')
+ICON = os.path.join('resources', 'MacGyver.png')
 
 #Images lists
-IMAGE_WALL = os.path.join ('resources', 'wall.png')
-IMAGE_PATH = os.path.join ('resources', 'path.png')
-IMAGE_MACGYVER = os.path.join ('resources', 'MacGyver.png')
-IMAGE_BOSS = os.path.join ('resources', 'Gardien.png')
-IMAGE_NEEDLE = os.path.join ('resources', 'aiguille.png')
-IMAGE_TUBE = os.path.join ('resources', 'tube_plastique.png')
-IMAGE_ETHER = os.path.join ('resources', 'ether.png')
+IMAGE_WALL = os.path.join('resources', 'wall.png')
+IMAGE_PATH = os.path.join('resources', 'path.png')
+IMAGE_MACGYVER = os.path.join('resources', 'MacGyver.png')
+IMAGE_BOSS = os.path.join('resources', 'Gardien.png')
+IMAGE_NEEDLE = os.path.join('resources', 'aiguille.png')
+IMAGE_TUBE = os.path.join('resources', 'tube_plastique.png')
+IMAGE_ETHER = os.path.join('resources', 'ether.png')
 
 #Game frames speed
 FPS = 30

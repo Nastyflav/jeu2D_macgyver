@@ -6,12 +6,12 @@ from random import sample
 
 from Settings.constants import PATHS_SQUARE
 
+#Class which reads the map file, extract all the characters and places items randomly
 class Map:
 
-    #Map creation
+    #Lists of the entire map and of all the available squares to place items
     def __init__(self, filename):
         self.filename = filename
-        #Lists of the entire map and of the available squares to place items
         self.map_array = []
         self.items = []
         # Method to create items positions
@@ -39,7 +39,6 @@ class Map:
                 if column == PATHS_SQUARE:
                     positions.append((x,y))
         self.items = sample(positions, 3)
-        #We place every item into the maze, using a character for every one of them
         self.map_array[self.items[0][0]][self.items[0][1]] = 'N'
         self.map_array[self.items[1][0]][self.items[1][1]] = 'T'
         self.map_array[self.items[2][0]][self.items[2][1]] = 'E'

@@ -7,11 +7,12 @@ from Models.map import Map
 from Settings.constants import IMAGE_WALL, IMAGE_PATH, IMAGE_MACGYVER, IMAGE_BOSS, IMAGE_NEEDLE, IMAGE_TUBE, IMAGE_ETHER, SPRITE_SIZE
 
 
+#Class only used for displaying the game, by loading images and blitting them on the screen
 class MapDisplay:
 
+	#Loading every needed images for the game
 	def __init__(self, map):
 		self.map = map
-        #Images loading from constants
 		self.wall = pg.image.load(IMAGE_WALL).convert_alpha()
 		self.path = pg.image.load(IMAGE_PATH).convert_alpha()
 		self.macgyver = pg.image.load(IMAGE_MACGYVER).convert_alpha()
@@ -20,18 +21,15 @@ class MapDisplay:
 		self.tube = pg.image.load(IMAGE_TUBE).convert_alpha()
 		self.ether = pg.image.load(IMAGE_ETHER).convert_alpha()
 	
-	#Method to display the maze using Pygame
+	#Method to analyze the map characters and blit an image on every one of them
 	def display_map(self, map, screen):
 		self.map = map
-		#We analyze every characters line and blit and image on every one of them
 		line_number = 0
 		for line in map.map_array:
 			col_number = 0
 			for sprite in line:
-                #Calculate the position as pixels
 				x = col_number * SPRITE_SIZE
 				y = line_number * SPRITE_SIZE
-				#Pygame function to put an image matching with a character
 				if sprite == 'W':		  
 					screen.blit(self.wall, (x, y))
 				elif sprite == 'B':		  
@@ -54,7 +52,7 @@ class MapDisplay:
 				col_number += 1
 			line_number += 1
 
-	#Method to display the maze into the terminal, before using graphics
+	#Method to display the maze into the terminal, before using Pygame graphics
 	# def display_terminal(self, map):
 	# 	for line in map.map_array:
 	# 		for character in line:

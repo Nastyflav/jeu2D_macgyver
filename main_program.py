@@ -4,7 +4,7 @@ import os
 
 from Models.game import Game
 
- 
+#Simple method to lauch the program, by calling the Game class
 def main():
     
     game = Game()

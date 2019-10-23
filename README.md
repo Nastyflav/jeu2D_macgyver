@@ -10,11 +10,13 @@ or clone with SSH : git@github.com:Nastyflav/macgyver.git \
 into a repo on your local machine \
 Documentation about pull --> https://help.github.com/en/articles/cloning-a-repository 
 
-Set your virtual environment under python3.7.x \
-Pip install Pygame (in your virtual environment) \
-Write "python3 main_program.py" in your terminal 
+Set your virtual environment under python3.7.x `pip install virtualenv`\
+Create an new virtual environment `virtualenv -p python3 env`\
+Activate it `source env/bin/activate`\
+Install requirements `pip install -r requirements.txt`
+Write `python3 main_program.py` in your terminal 
 
-Requirements :
+Dependancies :
 --------------
 Python 3.7.x \
 download : https://www.python.org/downloads/ \

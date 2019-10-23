@@ -13,7 +13,7 @@ Documentation about pull --> https://help.github.com/en/articles/cloning-a-repos
 Set your virtual environment under python3.7.x `pip install virtualenv`\
 Create an new virtual environment `virtualenv -p python3 env`\
 Activate it `source env/bin/activate`\
-Install requirements `pip install -r requirements.txt`
+Install requirements `pip install -r requirements.txt`\
 Write `python3 main_program.py` in your terminal 
 
 Dependancies :

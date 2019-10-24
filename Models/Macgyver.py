@@ -2,6 +2,7 @@
 # coding: utf-8
 """The hero class, managing movements and actions"""
 
+
 class Macgyver:
     """Class to manage the Macgyver moves and the items picking into the maze"""
     def __init__(self, map):
@@ -17,6 +18,7 @@ class Macgyver:
             map.map_array[self.y][self.x] = '.'
             self.y -= 1
             map.map_array[self.y][self.x] = 'M'
+            self.collect_items(map)
         return map
 
     def move_down(self, map):
@@ -25,6 +27,7 @@ class Macgyver:
             map.map_array[self.y][self.x] = '.'
             self.y += 1
             map.map_array[self.y][self.x] = 'M'
+            self.collect_items(map)
         return map
 
     def move_right(self, map):
@@ -33,6 +36,7 @@ class Macgyver:
             map.map_array[self.y][self.x] = '.'
             self.x += 1
             map.map_array[self.y][self.x] = 'M'
+            self.collect_items(map)
         return map
 
     def move_left(self, map):
@@ -41,12 +45,26 @@ class Macgyver:
             map.map_array[self.y][self.x] = '.'
             self.x -= 1
             map.map_array[self.y][self.x] = 'M'
+            self.collect_items(map)
         return map
 
-    def collect_items(self, pos_y, pos_x):
-        """Method to compare Macgyver position with the items positions,
-        to increment the number of collected items"""
-        if self.map.map_array[self.y][self.x] == 'N'\
-        or 'T'\
-        or 'E':
-            self.items_collected += 1
+    # def collect_items(self):
+    #     """Method to compare Macgyver position with the items positions,
+    #     to increment the number of collected items"""
+    #     if self.map.map_array[pos_y][pos_x] == 'N'\
+    #     or 'T'\
+    #     or 'E':
+    #         self.items_collected += 1
+    #         print(self.items_collected)
+
+    def collect_items(self, map):
+        '''Check if the hero position is also an item position, and increments the backpack'''
+        if (self.y, self.x) == map.items[0]:
+                self.items_collected += 1
+                print("Needle")
+        elif (self.y, self.x) == map.items[1]:
+                self.items_collected += 1
+                print("tube")
+        elif (self.y, self.x) == map.items[2]:
+                self.items_collected += 1
+                print("ether")

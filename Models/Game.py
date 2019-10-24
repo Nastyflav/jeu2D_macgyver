@@ -23,7 +23,7 @@ class Game:
         pg.display.set_icon(self.icon)
         
         self.message = pg.font.SysFont(None, 30)
-        self.win = self.message.render('YOU WIN ! Your syringe put him asleep', True, (WHITE))
+        self.win = self.message.render('YOU WIN ! Your syringe puts him to sleep', True, (WHITE))
         self.lost = self.message.render('YOU LOST ! The guardian captured you', True, (WHITE))
         
         self.map = Map("Maps/level.txt")
@@ -51,7 +51,7 @@ class Game:
         if self.map.map_array[self.macgyver.y][self.macgyver.x + 1] == 'B':
             if self.macgyver.items_collected != 3:
                 self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
-                self.screen.blit(self.lost, (130, 315))
+                self.screen.blit(self.lost, (110, 315))
                 pg.display.update()
                 pg.time.wait(7000)
                 self.running = False
@@ -62,7 +62,7 @@ class Game:
         if self.map.map_array[self.macgyver.y][self.macgyver.x + 1] == 'B':
             if self.macgyver.items_collected == 3:
                 self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
-                self.screen.blit(self.win, (140, 315))
+                self.screen.blit(self.win, (115, 315))
                 pg.display.update()
                 pg.time.wait(7000)
                 self.running = False

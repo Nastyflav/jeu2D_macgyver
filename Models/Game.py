@@ -42,30 +42,20 @@ class Game:
             self.keyboard_events()
             self.items_counter()
             self.clock.tick(FPS)
-            self.loss_ending()
-            self.win_ending()
+            self.endings()
 
-    def loss_ending(self):
-        """Method called if MG is in front of the boss without all the items
-        Printing a loss message and ending game"""
+    def endings(self):
+        """Method called if MG is in front of the boss with or without all the items
+        Printing a win or loss message and ending game"""
         if self.map.map_array[self.macgyver.y][self.macgyver.x + 1] == 'B':
-            if self.macgyver.items_collected != 3:
-                self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
-                self.screen.blit(self.lost, (110, 315))
-                pg.display.update()
-                pg.time.wait(7000)
-                self.running = False
-
-    def win_ending(self):
-        """Method called if MG is in front of the boss with all the items
-        Printing a win message and ending game"""
-        if self.map.map_array[self.macgyver.y][self.macgyver.x + 1] == 'B':
+            self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
             if self.macgyver.items_collected == 3:
-                self.rect = pg.draw.rect(self.screen, BLACK, [0, 300, 600, 50])
-                self.screen.blit(self.win, (115, 315))
-                pg.display.update()
-                pg.time.wait(7000)
-                self.running = False
+                self.screen.blit(self.win, (115, 315)) 
+            else:
+                self.screen.blit(self.lost, (110, 315))
+            pg.display.update()
+            pg.time.wait(7000)
+            self.running = False
 
     def keyboard_events(self):
         """Method for keyboard controllers during the game, 

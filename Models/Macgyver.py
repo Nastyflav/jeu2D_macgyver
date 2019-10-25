@@ -48,23 +48,11 @@ class Macgyver:
             self.collect_items(map)
         return map
 
-    # def collect_items(self):
-    #     """Method to compare Macgyver position with the items positions,
-    #     to increment the number of collected items"""
-    #     if self.map.map_array[pos_y][pos_x] == 'N'\
-    #     or 'T'\
-    #     or 'E':
-    #         self.items_collected += 1
-    #         print(self.items_collected)
-
     def collect_items(self, map):
         '''Check if the hero position is also an item position, and increments the backpack'''
         if (self.y, self.x) == map.items[0]:
-                self.items_collected += 1
-                print("Needle")
+            self.items_collected += 1
         elif (self.y, self.x) == map.items[1]:
-                self.items_collected += 1
-                print("tube")
+            self.items_collected += 1
         elif (self.y, self.x) == map.items[2]:
-                self.items_collected += 1
-                print("ether")
+            self.items_collected += 1

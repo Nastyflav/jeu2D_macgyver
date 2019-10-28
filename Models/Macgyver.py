@@ -52,7 +52,10 @@ class Macgyver:
         '''Check if the hero position is also an item position, and increments the backpack'''
         if (self.y, self.x) == map.items[0]:
             self.items_collected += 1
+            map.items[0] = (14, 0)
         elif (self.y, self.x) == map.items[1]:
             self.items_collected += 1
+            map.items[1] = (14, 1)
         elif (self.y, self.x) == map.items[2]:
             self.items_collected += 1
+            map.items[2] = (14, 2)

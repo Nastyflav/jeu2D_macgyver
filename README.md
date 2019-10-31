@@ -32,8 +32,8 @@ install pip : https://packaging.python.org/tutorials/installing-packages/
 Modules :
 --------------
 main_program.py\
-Models/ contains all the differents classes and the game mechanics\
-Resources/ contains the graphics elements\
+Resources/ contains all the differents classes and the game mechanics\
+Images/ contains the graphics elements\
 Settings/ contains constants.py\
 Maps/ contains .txt files (level design)
 

@@ -3,9 +3,9 @@
 """We import Pygame to create the game screen and the messages"""
 import pygame as pg
 
-from Models.Map import Map
-from Models.Macgyver import Macgyver
-from Models.MapDisplay import MapDisplay
+from Resources.Map import Map
+from Resources.Macgyver import Macgyver
+from Resources.MapDisplay import MapDisplay
 from Settings.constants import SIDE_DIM, WINDOW_TITLE, FPS, ICON, WHITE, BLACK
 
 

@@ -17,16 +17,16 @@ WALLS_SQUARE = "W"
 
 #Window settings
 WINDOW_TITLE = "The Great Escape of MacGyver"
-ICON = os.path.join('resources', 'MacGyver.png')
+ICON = os.path.join('images', 'MacGyver.png')
 
 #Images lists
-IMAGE_WALL = os.path.join('resources', 'wall.png')
-IMAGE_PATH = os.path.join('resources', 'path.png')
-IMAGE_MACGYVER = os.path.join('resources', 'MacGyver.png')
-IMAGE_BOSS = os.path.join('resources', 'Gardien.png')
-IMAGE_NEEDLE = os.path.join('resources', 'aiguille.png')
-IMAGE_TUBE = os.path.join('resources', 'tube_plastique.png')
-IMAGE_ETHER = os.path.join('resources', 'ether.png')
+IMAGE_WALL = os.path.join('images', 'wall.png')
+IMAGE_PATH = os.path.join('images', 'path.png')
+IMAGE_MACGYVER = os.path.join('images', 'MacGyver.png')
+IMAGE_BOSS = os.path.join('images', 'Gardien.png')
+IMAGE_NEEDLE = os.path.join('images', 'aiguille.png')
+IMAGE_TUBE = os.path.join('images', 'tube_plastique.png')
+IMAGE_ETHER = os.path.join('images', 'ether.png')
 
 #Game frames speed
 FPS = 30

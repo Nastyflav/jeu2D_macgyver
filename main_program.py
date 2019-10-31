@@ -2,7 +2,7 @@
 # coding: utf-8
 
 """Only import the Game class to lauch the program"""
-from Models.Game import Game
+from Resources.Game import Game
 
 
 def main():

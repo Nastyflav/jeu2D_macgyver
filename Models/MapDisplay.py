@@ -3,8 +3,7 @@
 """We use Pygame to import images and to blit them on screen"""
 import pygame as pg
 
-from Settings.constants import IMAGE_WALL, IMAGE_PATH, IMAGE_MACGYVER, IMAGE_BOSS, \
-							IMAGE_NEEDLE, IMAGE_TUBE, IMAGE_ETHER, SPRITE_SIZE
+from Settings.constants import *
 
 
 
@@ -48,10 +47,3 @@ class MapDisplay:
                     screen.blit(self.ether, (x, y))
                 col_number += 1
             line_number += 1
-
-	#Method to display the maze into the terminal, before using Pygame graphics
-	# def display_terminal(self, map):
-	# 	for line in map.map_array:
-	# 		for character in line:
-	# 			print(character, end=" ")
-	# 		print()

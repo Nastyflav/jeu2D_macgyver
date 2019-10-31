@@ -49,7 +49,8 @@ class Macgyver:
         return map
 
     def collect_items(self, map):
-        '''Check if the hero position is also an item position, and increments the backpack'''
+        '''Check if the hero position is also an item position, and increments the backpack
+        The item position is moved away to avoid repetitions'''
         if (self.y, self.x) == map.items[0]:
             self.items_collected += 1
             map.items[0] = (14, 0)

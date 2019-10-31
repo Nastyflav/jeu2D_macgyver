@@ -9,17 +9,14 @@ from Settings.constants import PATHS_SQUARE
 class Map:
     """Class which reads the map file, extract all the characters and places items randomly"""
 
-    #Lists of the entire map and of all the available squares to place items
     def __init__(self, filename):
+        """Lists of the entire map and of all the available squares to place items"""
         self.filename = filename
         self.map_array = []
         self.items = []
-        # Method to create items positions
+        """Method to create items positions"""
         self.load_from_file()
         self.random_items()
-
-        self.height = None
-        self.width = None
 
     def load_from_file(self):
         """Loading map to make an array with all the file characters"""

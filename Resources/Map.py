@@ -18,7 +18,7 @@ class Map:
         self.start_y = []
         """Method to create positions"""
         self.load_from_file()
-        self.random_items()
+        self.extract_positions()
 
     def load_from_file(self):
         """Loading map to make an array with all the file characters"""
@@ -29,7 +29,7 @@ class Map:
         except FileNotFoundError:
             print("Couldn't open map file \"" + self.filename + "\"")
 
-    def random_items(self):
+    def extract_positions(self):
         """Method to extract every path position into the map_array
         and using the random.sample function to select three items positions"""
         positions = []

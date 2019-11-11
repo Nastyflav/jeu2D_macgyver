@@ -9,6 +9,7 @@ def main():
     """Simple method to lauch the program, by calling the start method of the Game class"""
     game = Game()
     game.start()
+    
 
 if __name__ == "__main__":
     main()

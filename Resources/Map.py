@@ -10,7 +10,8 @@ class Map:
     """Class which reads the map file, extract all the characters and places items randomly"""
 
     def __init__(self, filename):
-        """Lists of the entire map and of all the available squares to place items"""
+        """Lists of the entire map, the start coordonates 
+        and of all the available squares to place items"""
         self.filename = filename
         self.map_array = []
         self.items = []
@@ -30,7 +31,7 @@ class Map:
             print("Couldn't open map file \"" + self.filename + "\"")
 
     def extract_positions(self):
-        """Method to extract every path position into the map_array
+        """Method to extract a start position, every path position into the map_array
         and using the random.sample function to select three items positions"""
         positions = []
         start = []
@@ -44,5 +45,5 @@ class Map:
         self.map_array[self.items[0][0]][self.items[0][1]] = 'N'
         self.map_array[self.items[1][0]][self.items[1][1]] = 'T'
         self.map_array[self.items[2][0]][self.items[2][1]] = 'E'
-        self.start_x = start[0][0]
-        self.start_y = start[0][1]
+        self.start_y = start[0][0]
+        self.start_x = start[0][1]

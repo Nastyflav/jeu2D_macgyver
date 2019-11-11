@@ -25,7 +25,7 @@ class Game:
         self.lost = self.message.render('YOU LOST ! The guardian captured you', True, (WHITE))
         self.map = Map("Maps/level.txt")
         self.display = MapDisplay()
-        self.macgyver = Macgyver(map)
+        self.macgyver = Macgyver(self.map)
         self.running = False
         self.clock = pg.time.Clock()
 

@@ -7,9 +7,9 @@ class Macgyver:
     """Class to manage the Macgyver moves and the items picking into the maze"""
     def __init__(self, map):
         """Start position and items counter"""
-        self.x = 0
-        self.y = 12
         self.map = map
+        self.x = map.start_x
+        self.y = map.start_y
         self.items_collected = 0
 
     def move_up(self, map):

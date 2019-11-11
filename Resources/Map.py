@@ -3,7 +3,7 @@
 """We only import the function sample from random module"""
 from random import sample
 
-from Settings.constants import PATHS_SQUARE
+from Settings.constants import PATHS_SQUARE, START_SQUARE
 
 
 class Map:
@@ -14,7 +14,9 @@ class Map:
         self.filename = filename
         self.map_array = []
         self.items = []
-        """Method to create items positions"""
+        self.start_x = []
+        self.start_y = []
+        """Method to create positions"""
         self.load_from_file()
         self.random_items()
 
@@ -31,11 +33,16 @@ class Map:
         """Method to extract every path position into the map_array
         and using the random.sample function to select three items positions"""
         positions = []
+        start = []
         for x, line in enumerate(self.map_array):
             for y, column in enumerate(line):
                 if column == PATHS_SQUARE:
                     positions.append((x, y))
+                elif column == START_SQUARE:
+                    start.append((x, y))
         self.items = sample(positions, 3)
         self.map_array[self.items[0][0]][self.items[0][1]] = 'N'
         self.map_array[self.items[1][0]][self.items[1][1]] = 'T'
         self.map_array[self.items[2][0]][self.items[2][1]] = 'E'
+        self.start_x = start[0][0]
+        self.start_y = start[0][1]

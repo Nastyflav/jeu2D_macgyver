@@ -6,7 +6,7 @@ import pygame as pg
 from Resources.Map import Map
 from Resources.Macgyver import Macgyver
 from Resources.MapDisplay import MapDisplay
-from Settings.constants import SIDE_DIM, WINDOW_TITLE, FPS, ICON, WHITE, BLACK
+from Settings.constants import SIDE_DIM, WINDOW_TITLE, FPS, ICON, WHITE, BLACK, MUSIC
 
 
 class Game:
@@ -28,6 +28,8 @@ class Game:
         self.macgyver = Macgyver(self.map)
         self.running = False
         self.clock = pg.time.Clock()
+        pg.mixer.music.load(MUSIC)
+        self.music = pg.mixer.music.play()
 
     def start(self):
         """Method which runs the game, with the map display,

@@ -34,3 +34,6 @@ FPS = 30
 #Colors
 WHITE = 255, 255, 255
 BLACK = 0, 0, 0
+
+#Sounds
+MUSIC = os.path.join('images', 'theme.wav')
